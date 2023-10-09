@@ -1,5 +1,5 @@
 <p align="left">
     <a href="https://instagram.com/muhavann">
-      <img src="https://i.ibb.co/8BnBg7q/instagram.png">
+      <img src="assets/img/instagram.png">
     </a>
 </p>
