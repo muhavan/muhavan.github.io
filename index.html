@@ -48,11 +48,11 @@
         <img src="assets/img/profile-giff.gif" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="muhavan.github.io">Muhamad Evan</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="https://twitter.com/muhavann"><i class="bx bxl-twitter"></i></a>
-          <a href="https://web.facebook.com/profile.php?id=100089657118941&_rdc=1&_rdr"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/muhavann/"><i class="bx bxl-instagram"></i></a>
-          <a href="https://www.youtube.com/watch?v=PnXBrONHXXo&_rdc=1&_rdr"><i class="bx bxl-youtube"></i></a>
-          <a href="https://t.me/VansGPTBot"><i class="bx bx-bot"></i></a>
+          <a href="http://twitter.com/muhavann"><i class="bx bxl-twitter"></i></a>
+          <a href="http://web.facebook.com/profile.php?id=100089657118941&_rdc=1&_rdr"><i class="bx bxl-facebook"></i></a>
+          <a href="http://www.instagram.com/muhavann/"><i class="bx bxl-instagram"></i></a>
+          <a href="http://www.youtube.com/watch?v=PnXBrONHXXo&_rdc=1&_rdr"><i class="bx bxl-youtube"></i></a>
+          <a href="http://t.me/VansGPTBot"><i class="bx bx-bot"></i></a>
         </div>
       </div>
 
@@ -186,30 +186,29 @@
           <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info">
               <div class="address">
-                <i class="bi bi-geo-alt"></i>
+                <a href="http://earth.google.com/web/search/Monas,+Gambir,+Central+Jakarta+City,+Jakarta/@-6.1753924,106.8271528,3.15234443a,839.74461194d,35y,0h,60t,0r/data=CigiJgokCQ50rtW3Lx_AEQ3xE2DrMB_AGaHenQysl1tAIWoraV6Fl1tAKAI6AwoBMA">
+                  <i class="bi bi-geo-alt"></i>
+                </a>
                 <h4>Location:</h4>
                 <p>South Tangerang, Indonesia</p>
               </div>
 
               <div class="email">
-                <i class="bi bi-envelope"></i>
+                <a href="http://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=muhammad400809@gmail.com">
+                  <i class="bi bi-envelope"></i>
+                </a>
                 <h4>Email:</h4>
                 <p>muhammad400809@gmail.com</p>
               </div>
 
               <div class="phone">
-                <i class="bi bi-phone"></i>
+                <a href="http://instagram.com/muhavann">
+                  <i class="bi bi-phone"></i>
+                </a>
                 <h4>Call & WhatsApp:</h4>
                 <p>+62 xxxxxxxxxxx</p>
-                <a href="https://instagram.com/muhavann">Contact me</a>
-                
-                </div>
-
-
-
-
-              
-
+                <a href="http://instagram.com/muhavann">Contact me</a>
+              </div>
 
             </div>
 
@@ -240,7 +239,17 @@
                 <div class="error-message">Sorry, the email forum is not available for you, please contact via WhatsApp.</div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center">
+                <fieldset>
+                  <button type="submit" id="form-submit" onclick="goToLink('http://instagram.com/muhavann')">
+                      <p>Send Message</p></button>
+                    <script>
+                    function goToLink(link) {
+                      window.location.href = link;
+                    }
+                    </script>
+                </fieldset>
+              </div>   
             </form>
     </div>
   </footer><!-- End  Footer -->

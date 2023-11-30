@@ -1065,6 +1065,13 @@ section {
   color: #eaebf0;
 }
 
+.map {
+  border-color: #040b14;
+  border: #040b14;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
 @media (max-width: 1199px) {
   #footer {
     position: static;
