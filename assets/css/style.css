@@ -1,13 +1,3 @@
-/**
-* Template Name: iPortfolio - v3.0.1
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
@@ -808,7 +798,12 @@ section {
 # Contact
 --------------------------------------------------------------*/
 .contact {
-  padding-bottom: 130px;
+  padding-bottom: 50px;
+}
+
+.contactme {
+  font-weight: bold;
+  font-size: xx-large;
 }
 
 .contact .info {
@@ -976,6 +971,21 @@ section {
   background: #37b3ed;
 }
 
+/*--------------------------------------------------------------
+# Linked Badges
+--------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+  .linkedin-image {
+    height: 385px;
+  }
+}
+/* Untuk mobile */
+@media screen and (max-width: 767px) {
+  .linkedin-image {
+    height: 280px;
+  }
+}
+
 @-webkit-keyframes animate-loading {
   0% {
     transform: rotate(0deg);
@@ -1055,7 +1065,7 @@ section {
 }
 
 #footer .copyright {
-  text-align: center;
+  text-align: center; 
 }
 
 #footer .credits {

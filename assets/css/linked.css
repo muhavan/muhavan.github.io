@@ -1,0 +1,12 @@
+/* Untuk desktop */
+@media screen and (min-width: 768px) {
+  .linkedin-image {
+    height: 380px;
+  }
+}
+/* Untuk mobile */
+@media screen and (max-width: 767px) {
+  .linkedin-image {
+    height: 280px; /* ukuran height untuk mobile */
+  }
+}
