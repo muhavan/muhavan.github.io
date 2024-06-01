@@ -211,3 +211,21 @@ html {
         transform: scale(.6);
       }
   }
+
+  .progress-bar-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .progress-bar.view-btn {
+    width: 100%;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  .progress-bar.view-btn:hover {
+    background-color: #45a049;
+  }
