@@ -22,24 +22,18 @@ Muhamad Evan Fauzan — Informatics student (Bogor, Indonesia), seeking IT Suppo
 - New custom CSS (`assets/css/style.css`) + JS (`assets/js/portfolio.js`)
 
 ## Implemented (Jun 2026)
-- Dark aesthetic with electric-lime + violet gradient accent
-- Bold display typography (Syne) + Space Grotesk body + JetBrains Mono micro
-- Side-rail navigation with active section indicator & glow
-- Hero: animated rise-in word reveal, gradient name, eyebrow chip with pulse, scroll indicator
-- Animated radial blobs + grain overlay for depth
-- Preloader with shimmer & loading bar
-- Custom cursor (dot + ring with hover scale-up)
-- Marquee strip with stroke text
-- Section labels with numbered prefixes (01—About, 02—Skills, ...)
-- About section with image card + info grid
-- Skills as cards with animated progress bars (intersect-based)
-- Certificates as cards with launch buttons
-- Contact CTA card + iconed contact list
-- Reveal-on-scroll via IntersectionObserver
-- Smooth scroll + active scroll-spy
-- Mobile responsive with collapsible nav
-- Back-to-top button
-- All data-testids preserved on interactive elements
+### v1 — Initial redesign
+- Dark aesthetic, hero word-reveal, marquee, side-rail nav, custom cursor
+- Sections: About / Skills / Certificate / Contact
+
+### v2 — Refinements (per user feedback)
+- **Color palette changed** from loud electric-lime + violet → sophisticated muted champagne/bronze (`#c9a87a`) + dusty slate (`#5a6478`). Body text warmed to `#ece8e0`.
+- **Typography sized down** on hero & section titles to prevent overflow on tablets/mid screens
+- **Projects section ADDED** between Skills and Certificate — `<section id="projects">` with 3 template `.project-card` blocks. Each card has number / tag / title / description / tech-stack tags / arrow link. Documented inline how to duplicate-and-edit.
+- **LinkedIn original image restored** as a featured 2-column card at top of Contact: original `linkedd.svg` on left, dark overlay panel with `Connect with me on LinkedIn` CTA on right
+- Section numbering updated: 01 About / 02 Skills / 03 Projects / 04 Certificate / 05 Contact
+- Added `nav-projects` link in side-rail with `bx-briefcase` icon
+- IntersectionObserver also targets `.project-card` for reveal-on-scroll
 
 ## Backlog / Future
 - P1: Add real project showcase section (no projects in current content)

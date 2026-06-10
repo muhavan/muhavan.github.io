@@ -116,7 +116,7 @@
   }, { passive: true });
 
   /* ---------- Reveal on scroll ---------- */
-  const reveals = document.querySelectorAll(".reveal, .skill-card");
+  const reveals = document.querySelectorAll(".reveal, .skill-card, .project-card");
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {

@@ -77,6 +77,7 @@
           <li><a href="#hero" class="nav-link scrollto active" data-testid="nav-home"><i class="bx bx-home"></i><span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto" data-testid="nav-about"><i class="bx bx-user"></i><span>About</span></a></li>
           <li><a href="#skills" class="nav-link scrollto" data-testid="nav-skills"><i class="bx bx-chart"></i><span>Skills</span></a></li>
+          <li><a href="#projects" class="nav-link scrollto" data-testid="nav-projects"><i class="bx bx-briefcase"></i><span>Projects</span></a></li>
           <li><a href="#certificate" class="nav-link scrollto" data-testid="nav-certificate"><i class="bx bx-check-shield"></i><span>Certificate</span></a></li>
           <li><a href="#contact" class="nav-link scrollto" data-testid="nav-contact"><i class="bx bx-envelope"></i><span>Contact</span></a></li>
         </ul>
@@ -135,7 +136,7 @@
 
       <div class="about-grid">
         <div class="about-image reveal" data-testid="about-image">
-          <img src="assets/img/profile-img.png" alt="Muhamad Evan Fauzan">
+          <img src="assets/img/profile-imgg.png" alt="Muhamad Evan Fauzan">
           <div class="badge"><span class="dot" style="width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;box-shadow:0 0 8px var(--accent);"></span>est. 2024</div>
         </div>
 
@@ -234,10 +235,96 @@
       </div>
     </section>
 
+    <!-- ======= Projects ======= -->
+    <section id="projects" class="projects" data-testid="section-projects">
+      <div class="section-title reveal">
+        <div class="label">03 — Projects</div>
+        <h2>Things I&rsquo;ve <span class="accent">built.</span></h2>
+        <p>Selected work &mdash; from networking labs to small web experiments.</p>
+      </div>
+
+      <div class="projects-grid" data-testid="projects-grid">
+        <!--
+          TEMPLATE — Duplicate the <article> block below for each new project.
+          Edit:
+            data-testid           : unique id (project-yourname)
+            .project-num          : 01 / 02 ...
+            .project-tag          : short category (e.g. Networking, Web, Python)
+            h3                    : project title
+            .project-desc         : short description
+            .project-stack span   : tech tags
+            .project-link href    : link to repo / live demo / case study
+        -->
+
+        <article class="project-card reveal" data-testid="project-1">
+          <a class="project-link" href="#" target="_blank" rel="noopener" aria-label="View project">
+            <div class="project-head">
+              <span class="project-num">01</span>
+              <span class="project-tag">Networking</span>
+            </div>
+            <div class="project-body">
+              <h3>Mikrotik Lab Topology</h3>
+              <p class="project-desc">
+                A multi-router lab simulating an enterprise WAN with VLANs, NAT and OSPF routing &mdash; built and tested end-to-end.
+              </p>
+            </div>
+            <div class="project-foot">
+              <div class="project-stack">
+                <span>Mikrotik</span><span>RouterOS</span><span>OSPF</span>
+              </div>
+              <span class="project-arrow"><i class="bi bi-arrow-up-right"></i></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card reveal" data-delay="1" data-testid="project-2">
+          <a class="project-link" href="#" target="_blank" rel="noopener" aria-label="View project">
+            <div class="project-head">
+              <span class="project-num">02</span>
+              <span class="project-tag">Web</span>
+            </div>
+            <div class="project-body">
+              <h3>Personal Portfolio</h3>
+              <p class="project-desc">
+                This site &mdash; a hand-crafted static portfolio with bold animations, custom cursor and a focus on typography.
+              </p>
+            </div>
+            <div class="project-foot">
+              <div class="project-stack">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <span class="project-arrow"><i class="bi bi-arrow-up-right"></i></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card reveal" data-delay="2" data-testid="project-3">
+          <a class="project-link" href="#" target="_blank" rel="noopener" aria-label="View project">
+            <div class="project-head">
+              <span class="project-num">03</span>
+              <span class="project-tag">Python</span>
+            </div>
+            <div class="project-body">
+              <h3>Add your project here</h3>
+              <p class="project-desc">
+                Edit <code>public/index.html</code> &mdash; duplicate this card and replace the title, description, stack tags and link.
+              </p>
+            </div>
+            <div class="project-foot">
+              <div class="project-stack">
+                <span>Python</span><span>Automation</span>
+              </div>
+              <span class="project-arrow"><i class="bi bi-arrow-up-right"></i></span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
     <!-- ======= Certificate ======= -->
     <section id="certificate" class="certificate" data-testid="section-certificate">
       <div class="section-title reveal">
-        <div class="label">03 — Certificates</div>
+        <div class="label">04 — Certificates</div>
         <h2>Receipts, <span class="accent">not promises.</span></h2>
         <p>Official certifications I&rsquo;ve earned along the journey.</p>
       </div>
@@ -293,13 +380,27 @@
     <!-- ======= Contact ======= -->
     <section id="contact" class="contact" data-testid="section-contact">
       <div class="section-title reveal">
-        <div class="label">04 — Contact</div>
+        <div class="label">05 — Contact</div>
         <h2>Let&rsquo;s build <span class="accent">something good.</span></h2>
         <p>Open to opportunities, collaborations and a friendly chat about networks.</p>
       </div>
 
       <div class="contact-grid">
-        <div class="contact-cta reveal" data-testid="contact-cta">
+        <a class="linkedin-card reveal" href="https://www.linkedin.com/in/muhamad-evan-fauzan/" target="_blank" rel="noopener" data-testid="linkedin-card" aria-label="Open LinkedIn profile">
+          <img src="assets/img/linkedd.svg" alt="LinkedIn profile preview" class="linkedin-image" loading="lazy">
+          <div class="linkedin-overlay">
+            <div class="linkedin-overlay-row">
+              <span class="linkedin-pill"><i class="bi bi-linkedin"></i> LinkedIn</span>
+              <span class="linkedin-arrow"><i class="bi bi-arrow-up-right"></i></span>
+            </div>
+            <div>
+              <h3>Connect with me on <span class="accent">LinkedIn</span></h3>
+              <p class="linkedin-sub">View my full work history, education and recommendations &mdash; let&rsquo;s grow our network.</p>
+            </div>
+          </div>
+        </a>
+
+        <div class="contact-cta reveal" data-delay="1" data-testid="contact-cta">
           <h3>Got an idea? <br><span class="accent">Let&rsquo;s talk.</span></h3>
           <p style="color: var(--text-2); position: relative; z-index:1; max-width: 420px;">Drop me an email or message — I usually reply within a day.</p>
           <a href="https://mail.google.com/mail/?view=cm&source=mailto&to=muhammad400809@gmail.com" target="_blank" rel="noopener" class="contactme" data-testid="contact-email-btn">
