@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhavan — Web Developer · IT Support · Network Engineer</title>
+  <meta name="description" content="Muhamad Evan Fauzan — Informatics student, Web Developer, IT Support and Network Engineer based in Bogor, Indonesia.">
+  <meta name="theme-color" content="#07070b">
+
+  <!-- Open Graph -->
+  <meta property="og:url" content="https://muhavan.github.io">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Muhavan — Portfolio">
+  <meta property="og:description" content="Web Developer | IT Support | Network Engineer">
+  <meta property="og:image" content="assets/img/thumbnail.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Muhavan — Portfolio">
+  <meta name="twitter:description" content="Web Developer | IT Support | Network Engineer">
+  <meta name="twitter:image" content="assets/img/thumbnail.png">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts (carefully chosen, not the usual suspects) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS (kept from original tech stack) -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body data-testid="portfolio-body">
+
+  <!-- ======= Preloader ======= -->
+  <div id="preloader" data-testid="preloader">
+    <div class="preloader-text">MUHAVAN</div>
+    <div class="preloader-bar"></div>
+  </div>
+
+  <!-- ======= Custom Cursor ======= -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ======= Mobile Nav Toggle ======= -->
+  <button class="mobile-nav-toggle d-xl-none" data-testid="mobile-nav-toggle" aria-label="Toggle navigation">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <!-- ======= Side Header ======= -->
+  <header id="header" data-testid="side-header">
+    <div class="d-flex flex-column">
+      <div class="profile">
+        <img src="assets/img/profile-giff.gif" alt="Muhavan profile" data-testid="profile-image" loading="eager">
+        <h1><a href="#hero" data-testid="profile-name">Muhavan</a></h1>
+        <p style="color: var(--text-3); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; margin: 0;">Official Website</p>
+        <div class="social-links mt-3 text-center">
+          <a href="https://twitter.com/muhavann" target="_blank" rel="noopener" data-testid="social-twitter" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="https://facebook.com/profile.php?id=100089657118941" target="_blank" rel="noopener" data-testid="social-facebook" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://instagram.com/muhavann/" target="_blank" rel="noopener" data-testid="social-instagram" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="https://youtube.com/watch?v=PnXBrONHXXo" target="_blank" rel="noopener" data-testid="social-youtube" aria-label="YouTube"><i class="bx bxl-youtube"></i></a>
+          <a href="https://vansgpt.github.io" target="_blank" rel="noopener" data-testid="social-bot" aria-label="VansGPT"><i class="bx bx-bot"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar" data-testid="navbar">
+        <ul>
+          <li><a href="#hero" class="nav-link scrollto active" data-testid="nav-home"><i class="bx bx-home"></i><span>Home</span></a></li>
+          <li><a href="#about" class="nav-link scrollto" data-testid="nav-about"><i class="bx bx-user"></i><span>About</span></a></li>
+          <li><a href="#skills" class="nav-link scrollto" data-testid="nav-skills"><i class="bx bx-chart"></i><span>Skills</span></a></li>
+          <li><a href="#certificate" class="nav-link scrollto" data-testid="nav-certificate"><i class="bx bx-check-shield"></i><span>Certificate</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto" data-testid="nav-contact"><i class="bx bx-envelope"></i><span>Contact</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ======= Hero ======= -->
+    <section id="hero" data-testid="section-hero">
+      <div class="hero-eyebrow" data-testid="hero-eyebrow">
+        <span class="dot"></span>
+        Available for work · Bogor, ID
+      </div>
+
+      <h1 data-testid="hero-title">
+        <span class="word"><span>Muhamad</span></span>
+        <span class="word"><span>Evan</span></span>
+        <span class="word"><span class="hero-accent">Fauzan</span></span>
+      </h1>
+
+      <p data-testid="hero-subtitle">
+        I&rsquo;m <span class="typed" data-typed-items="Informatics Student, IT Support, Programmer, Website Enthusiast, Network Engineer"></span>
+      </p>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary scrollto" data-testid="hero-cta-contact">
+          Let&rsquo;s talk <i class="bi bi-arrow-up-right"></i>
+        </a>
+        <a href="#about" class="btn-ghost scrollto" data-testid="hero-cta-about">
+          About me <i class="bi bi-arrow-down"></i>
+        </a>
+      </div>
+
+      <div class="scroll-indicator">
+        <span class="scroll-line"></span>
+        Scroll
+      </div>
+    </section>
+
+    <!-- ======= Marquee strip ======= -->
+    <div class="marquee" aria-hidden="true" data-testid="marquee">
+      <div class="marquee-track">
+        <span>Web Developer</span><span>IT Support</span><span>Network Engineer</span><span>Programmer</span><span>Website Enthusiast</span><span>Web Developer</span><span>IT Support</span><span>Network Engineer</span><span>Programmer</span><span>Website Enthusiast</span>
+      </div>
+    </div>
+
+    <!-- ======= About ======= -->
+    <section id="about" class="about" data-testid="section-about">
+      <div class="section-title reveal">
+        <div class="label">01 — About</div>
+        <h2>Hello, <span class="accent">I&rsquo;m Evan.</span></h2>
+        <p>An informatics student passionate about networking and IT support — building things that work, learning the ones that don&rsquo;t.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-image reveal" data-testid="about-image">
+          <img src="assets/img/profile-img.png" alt="Muhamad Evan Fauzan">
+          <div class="badge"><span class="dot" style="width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;box-shadow:0 0 8px var(--accent);"></span>est. 2024</div>
+        </div>
+
+        <div class="about-content reveal" data-delay="1">
+          <h3>Informatics student, committed to <span style="color: var(--accent); font-style: italic;">technology</span>.</h3>
+          <p>Informatics student who is enthusiastic and committed to developing himself in the field of networking and information technology support. I have a particular interest in the role of Network Engineer and IT Support, and skills in Python and HTML programming languages. With my educational background, clear interests, and solid technical skills, I&rsquo;m ready to make positive contributions in a dynamic work environment in the Technology field.</p>
+
+          <ul class="about-info" data-testid="about-info">
+            <li>
+              <strong>Name</strong>
+              <span>Muhamad Evan Fauzan</span>
+            </li>
+            <li>
+              <strong>City</strong>
+              <span>Bogor, Indonesia</span>
+            </li>
+            <li>
+              <strong>Email</strong>
+              <span>muhammad400809@gmail.com</span>
+            </li>
+            <li>
+              <strong>Focus</strong>
+              <span>Network &amp; IT Support</span>
+            </li>
+          </ul>
+
+          <a href="#contact" class="btn-primary scrollto" data-testid="about-cta">
+            Get in touch <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Skills ======= -->
+    <section id="skills" class="skills" data-testid="section-skills">
+      <div class="section-title reveal">
+        <div class="label">02 — Skills</div>
+        <h2>A toolbox <span class="accent">that ships.</span></h2>
+        <p>Here are the technologies and tools I work with day to day.</p>
+      </div>
+
+      <div class="skills-grid" data-testid="skills-grid">
+        <div class="skill-card reveal" data-testid="skill-msoffice" style="--skill-w: 100%;">
+          <div class="skill-head">
+            <span class="skill-name">Microsoft Office</span>
+            <span class="skill-icon"><i class="bi bi-file-earmark-text"></i></span>
+          </div>
+          <div class="skill-bar"><span></span></div>
+          <div class="skill-meta"><span>Productivity</span><span class="skill-pct">100%</span></div>
+        </div>
+
+        <div class="skill-card reveal" data-delay="1" data-testid="skill-python" style="--skill-w: 100%;">
+          <div class="skill-head">
+            <span class="skill-name">Python</span>
+            <span class="skill-icon"><i class="bi bi-code-slash"></i></span>
+          </div>
+          <div class="skill-bar"><span></span></div>
+          <div class="skill-meta"><span>Programming</span><span class="skill-pct">100%</span></div>
+        </div>
+
+        <div class="skill-card reveal" data-delay="2" data-testid="skill-php" style="--skill-w: 100%;">
+          <div class="skill-head">
+            <span class="skill-name">PHP</span>
+            <span class="skill-icon"><i class="bi bi-filetype-php"></i></span>
+          </div>
+          <div class="skill-bar"><span></span></div>
+          <div class="skill-meta"><span>Backend</span><span class="skill-pct">100%</span></div>
+        </div>
+
+        <div class="skill-card reveal" data-testid="skill-mikrotik" style="--skill-w: 100%;">
+          <div class="skill-head">
+            <span class="skill-name">Mikrotik</span>
+            <span class="skill-icon"><i class="bi bi-router"></i></span>
+          </div>
+          <div class="skill-bar"><span></span></div>
+          <div class="skill-meta"><span>Networking</span><span class="skill-pct">100%</span></div>
+        </div>
+
+        <div class="skill-card reveal" data-delay="1" data-testid="skill-html" style="--skill-w: 100%;">
+          <div class="skill-head">
+            <span class="skill-name">HTML</span>
+            <span class="skill-icon"><i class="bi bi-filetype-html"></i></span>
+          </div>
+          <div class="skill-bar"><span></span></div>
+          <div class="skill-meta"><span>Frontend</span><span class="skill-pct">100%</span></div>
+        </div>
+
+        <div class="skill-card reveal" data-delay="2" data-testid="skill-css" style="--skill-w: 100%;">
+          <div class="skill-head">
+            <span class="skill-name">CSS</span>
+            <span class="skill-icon"><i class="bi bi-filetype-css"></i></span>
+          </div>
+          <div class="skill-bar"><span></span></div>
+          <div class="skill-meta"><span>Styling</span><span class="skill-pct">100%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Certificate ======= -->
+    <section id="certificate" class="certificate" data-testid="section-certificate">
+      <div class="section-title reveal">
+        <div class="label">03 — Certificates</div>
+        <h2>Receipts, <span class="accent">not promises.</span></h2>
+        <p>Official certifications I&rsquo;ve earned along the journey.</p>
+      </div>
+
+      <div class="cert-grid" data-testid="cert-grid">
+        <article class="cert-card reveal" data-testid="cert-mtcna">
+          <div class="cert-num">001 / MTCNA</div>
+          <h3>MikroTik Certified Network Associate</h3>
+          <div class="cert-issuer">Issued by MikroTik</div>
+          <button class="cert-btn" onclick="viewCertificate('mtcna')" data-testid="cert-mtcna-btn">
+            View certificate <i class="bi bi-arrow-up-right"></i>
+          </button>
+        </article>
+
+        <article class="cert-card reveal" data-delay="1" data-testid="cert-bnsp">
+          <div class="cert-num">002 / BNSP</div>
+          <h3>Junior Network Administrator</h3>
+          <div class="cert-issuer">Issued by BNSP</div>
+          <button class="cert-btn" onclick="viewCertificate('bnsp')" data-testid="cert-bnsp-btn">
+            View certificate <i class="bi bi-arrow-up-right"></i>
+          </button>
+        </article>
+
+        <article class="cert-card reveal" data-delay="2" data-testid="cert-devops">
+          <div class="cert-num">003 / DevOps</div>
+          <h3>DevOps Essentials</h3>
+          <div class="cert-issuer">Issued by Skill Academy</div>
+          <button class="cert-btn" onclick="viewCertificate('devops')" data-testid="cert-devops-btn">
+            View certificate <i class="bi bi-arrow-up-right"></i>
+          </button>
+        </article>
+
+        <article class="cert-card reveal" data-testid="cert-pcap">
+          <div class="cert-num">004 / PCAP</div>
+          <h3>Programming Essentials in Python</h3>
+          <div class="cert-issuer">Issued by Cisco / Python Institute</div>
+          <button class="cert-btn" onclick="viewCertificate('pcap')" data-testid="cert-pcap-btn">
+            View certificate <i class="bi bi-arrow-up-right"></i>
+          </button>
+        </article>
+
+        <article class="cert-card reveal" data-delay="1" data-testid="cert-office">
+          <div class="cert-num">005 / MOS</div>
+          <h3>Microsoft Office 2016</h3>
+          <div class="cert-issuer">Issued by Certiport / Microsoft</div>
+          <button class="cert-btn" onclick="viewCertificate('office2016')" data-testid="cert-office-btn">
+            View certificate <i class="bi bi-arrow-up-right"></i>
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======= Contact ======= -->
+    <section id="contact" class="contact" data-testid="section-contact">
+      <div class="section-title reveal">
+        <div class="label">04 — Contact</div>
+        <h2>Let&rsquo;s build <span class="accent">something good.</span></h2>
+        <p>Open to opportunities, collaborations and a friendly chat about networks.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-cta reveal" data-testid="contact-cta">
+          <h3>Got an idea? <br><span class="accent">Let&rsquo;s talk.</span></h3>
+          <p style="color: var(--text-2); position: relative; z-index:1; max-width: 420px;">Drop me an email or message — I usually reply within a day.</p>
+          <a href="https://mail.google.com/mail/?view=cm&source=mailto&to=muhammad400809@gmail.com" target="_blank" rel="noopener" class="contactme" data-testid="contact-email-btn">
+            Contact me <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+
+        <ul class="contact-list" data-testid="contact-list">
+          <li>
+            <a href="https://www.linkedin.com/in/muhamad-evan-fauzan/" target="_blank" rel="noopener" data-testid="contact-linkedin">
+              <span class="icon"><i class="bi bi-linkedin"></i></span>
+              <span class="meta">
+                <h4>LinkedIn</h4>
+                <p>muhamad-evan-fauzan</p>
+              </span>
+              <span class="arrow"><i class="bi bi-arrow-up-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/muhavann" target="_blank" rel="noopener" data-testid="contact-instagram">
+              <span class="icon"><i class="bi bi-instagram"></i></span>
+              <span class="meta">
+                <h4>Instagram</h4>
+                <p>@muhavann</p>
+              </span>
+              <span class="arrow"><i class="bi bi-arrow-up-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://mail.google.com/mail/?view=cm&source=mailto&to=muhammad400809@gmail.com" target="_blank" rel="noopener" data-testid="contact-email">
+              <span class="icon"><i class="bi bi-envelope"></i></span>
+              <span class="meta">
+                <h4>Email</h4>
+                <p>muhammad400809@gmail.com</p>
+              </span>
+              <span class="arrow"><i class="bi bi-arrow-up-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://earth.google.com/web/@-6.34406327,106.7361878,64.02222202a,532.27611883d,35y,221.45540249h,60t,0r/data=KAI" target="_blank" rel="noopener" data-testid="contact-location">
+              <span class="icon"><i class="bi bi-geo-alt"></i></span>
+              <span class="meta">
+                <h4>Location</h4>
+                <p>Bogor, Indonesia</p>
+              </span>
+              <span class="arrow"><i class="bi bi-arrow-up-right"></i></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-testid="footer">
+    <div class="footer-inner">
+      <div>© 2024 <a href="https://instagram.com/muhavann" target="_blank" rel="noopener"><strong>Muhamad Evan Fauzan</strong></a> — All rights reserved.</div>
+      <div>Designed &amp; built with care.</div>
+    </div>
+  </footer>
+
+  <!-- React root (kept hidden so CRA doesn't error out) -->
+  <div id="root" style="display:none"></div>
+
+  <!-- Vendor JS (kept from original tech stack) -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+
+  <!-- Certificate viewer -->
+  <script src="assets/js/view.js"></script>
+
+  <!-- Custom main JS -->
+  <script src="assets/js/portfolio.js"></script>
+</body>
+
+</html>
