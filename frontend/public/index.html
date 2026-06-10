@@ -51,28 +51,23 @@
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
 
-  <!-- ======= Mobile Nav Toggle ======= -->
-  <button class="mobile-nav-toggle d-xl-none" data-testid="mobile-nav-toggle" aria-label="Toggle navigation">
-    <i class="bi bi-list"></i>
-  </button>
+  <!-- ======= Scroll Progress Bar ======= -->
+  <div class="scroll-progress" data-testid="scroll-progress" aria-hidden="true"></div>
 
-  <!-- ======= Side Header ======= -->
-  <header id="header" data-testid="side-header">
-    <div class="d-flex flex-column">
-      <div class="profile">
-        <img src="assets/img/profile-giff.gif" alt="Muhavan profile" data-testid="profile-image" loading="eager">
-        <h1><a href="#hero" data-testid="profile-name">Muhavan</a></h1>
-        <p style="color: var(--text-3); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; margin: 0;">Official Website</p>
-        <div class="social-links mt-3 text-center">
-          <a href="https://twitter.com/muhavann" target="_blank" rel="noopener" data-testid="social-twitter" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://facebook.com/profile.php?id=100089657118941" target="_blank" rel="noopener" data-testid="social-facebook" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://instagram.com/muhavann/" target="_blank" rel="noopener" data-testid="social-instagram" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://youtube.com/watch?v=PnXBrONHXXo" target="_blank" rel="noopener" data-testid="social-youtube" aria-label="YouTube"><i class="bx bxl-youtube"></i></a>
-          <a href="https://vansgpt.github.io" target="_blank" rel="noopener" data-testid="social-bot" aria-label="VansGPT"><i class="bx bx-bot"></i></a>
-        </div>
-      </div>
+  <!-- ======= Top Navigation ======= -->
+  <header id="header" data-testid="top-header">
+    <div class="header-inner">
+      <a href="#hero" class="brand scrollto" data-testid="brand-logo">
+        <span class="brand-mark">
+          <img src="assets/img/profile-giff.gif" alt="Muhavan" loading="eager">
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Muhavan</span>
+          <span class="brand-sub">Official Website</span>
+        </span>
+      </a>
 
-      <nav id="navbar" class="nav-menu navbar" data-testid="navbar">
+      <nav id="navbar" class="nav-menu" data-testid="navbar">
         <ul>
           <li><a href="#hero" class="nav-link scrollto active" data-testid="nav-home"><i class="bx bx-home"></i><span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto" data-testid="nav-about"><i class="bx bx-user"></i><span>About</span></a></li>
@@ -83,6 +78,15 @@
           <li><a href="#contact" class="nav-link scrollto" data-testid="nav-contact"><i class="bx bx-envelope"></i><span>Contact</span></a></li>
         </ul>
       </nav>
+
+      <a href="#contact" class="header-cta scrollto" data-testid="header-cta">
+        <span>Let&rsquo;s talk</span>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+
+      <button class="mobile-nav-toggle" data-testid="mobile-nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -700,8 +704,17 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" data-testid="footer">
     <div class="footer-inner">
-      <div>© 2024 <a href="https://instagram.com/muhavann" target="_blank" rel="noopener"><strong>Muhamad Evan Fauzan</strong></a> — All rights reserved.</div>
-      <div>Designed &amp; built with care.</div>
+      <div class="footer-left">
+        <div>© 2024 <a href="https://instagram.com/muhavann" target="_blank" rel="noopener"><strong>Muhamad Evan Fauzan</strong></a> — All rights reserved.</div>
+        <div>Designed &amp; built with care.</div>
+      </div>
+      <div class="footer-social" data-testid="footer-social">
+        <a href="https://twitter.com/muhavann" target="_blank" rel="noopener" data-testid="social-twitter" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://facebook.com/profile.php?id=100089657118941" target="_blank" rel="noopener" data-testid="social-facebook" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://instagram.com/muhavann/" target="_blank" rel="noopener" data-testid="social-instagram" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://youtube.com/watch?v=PnXBrONHXXo" target="_blank" rel="noopener" data-testid="social-youtube" aria-label="YouTube"><i class="bx bxl-youtube"></i></a>
+        <a href="https://github.com/muhavan" target="_blank" rel="noopener" data-testid="social-github" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+      </div>
     </div>
   </footer>
 

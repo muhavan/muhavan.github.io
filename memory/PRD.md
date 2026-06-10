@@ -53,18 +53,24 @@ Muhamad Evan Fauzan — Informatics student (Bogor, Indonesia), seeking IT Suppo
 - Hero typed strings, about copy, marquee, LinkedIn sub all updated to programming focus
 
 ### v5 — Experience timeline + GitHub stats + real CV projects
-- **CV ingested** (CV MUHAMAD EVAN FAUZAN.pdf) — content used to fill in real data across the site.
-- **Experience section ADDED** (`#experience`) as a vertical timeline (03 — Experience) with animated dots & accent line:
-  - **Cyber Security Engineer** @ PT. Solusi Prima Sentosa (Dec 2023 — 2025) with 4 bullet responsibilities from CV
-  - **Web Developer Intern** @ Dinas Pariwisata Kota Tangerang Selatan — UMKM submissions + tourism info system, stack: Node.js/Express/MySQL
-  - **S1 Teknologi Informasi** @ Universitas Bina Sarana Informatika (Sep 2022 — Present, GPA 3.74)
-  - **Teknik Komputer dan Jaringan** @ SMK LETRIS Indonesia 2 (2019 — 2022)
-- **Navigation updated** — added `nav-experience` link. Section numbering: 01 About / 02 Skills / **03 Experience** / 04 Projects / 05 Certificate / 06 Contact
-- **Projects updated with real CV projects**:
-  - 01 Karyawanku (Laravel/PHP/MySQL), 02 Dinas Pariwisata Tangsel (Node.js), 03 Personal Portfolio, 04 Template card
-- **GitHub stats block ADDED** below Projects — live `@muhavan` data via github-readme-stats + streak-stats endpoints, themed navy
-- **About** updated with GPA 3.74 + university
-- **Certificates expanded from 5 to 8** (BNSP Madya, Ethical Hacker, TOEFL added); `view.js` updated with new cert IDs
+- CV ingested. Added Experience section, GitHub stats, real CV projects, expanded certs
+
+### v6 — Top navigation + advanced animations (per user feedback)
+- **Side nav → Top nav** — Full layout restructure. Header is now a fixed glass-pill top navigation with:
+  - Left: Brand mark (avatar) + "Muhavan" gradient text + "OFFICIAL WEBSITE" subtitle
+  - Center: Pill-shaped glass nav menu with icons + labels (Home/About/Skills/Experience/Projects/Certificate/Contact). Active item highlighted with navy fill
+  - Right: "Let's talk" CTA pill (with magnetic hover effect)
+  - Mobile: animated hamburger → 3-line burger morphs into X, dropdown panel slides down with backdrop blur
+- **Layout updates** — Removed `margin-left: 300px` from main, footer, marquee. Hero & all sections now have full horizontal canvas (1400px max-width container in header). Skills jumped from 4-col → 5-col grid, projects 3-col → 4-col, certs 4-col with breathing room.
+- **Social icons moved** from side nav to footer (Twitter, Facebook, Instagram, YouTube, GitHub).
+- **Scroll progress bar** added — 2px navy gradient line at very top of viewport, scales horizontally with scroll position.
+- **Header scroll state** — Top nav shrinks padding + adds bottom border when user scrolls past 40px.
+- **New animations added**:
+  - **3D tilt on cards** (project/cert/skill/timeline) — `perspective(900px) rotateX/Y` based on cursor position, max 6deg
+  - **Magnetic hover** on header CTA, btn-primary, btn-ghost, footer social icons — element translates slightly toward cursor
+  - **Slide-down entrance** for top header on page load
+  - **Counter animation** utility (`data-counter` attribute) ready for future use
+- **Smooth-scroll offset** updated to account for fixed top header (-80px)
 - **Hero word-reveal animation rewritten** — old version used `overflow:hidden` on word containers which clipped the italic "n" in "Fauzan". New animation uses `opacity + translateY(40%)` fade instead, no clipping needed. Italic glyphs render fully.
 - **Skills section expanded** to reflect programming focus. Now 10 cards: **Laravel** (red logo), **Node.js** (green logo), PHP, Python, **JavaScript** (yellow logo), HTML5, CSS3, **MySQL** (blue dolphin), Mikrotik, Microsoft Office — all with official multi-color brand logos
 - **Hero typed strings** updated to: "Web Developer, Laravel Developer, Node.js Developer, Programmer, IT Support, Network Engineer, Informatics Student"

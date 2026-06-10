@@ -32,8 +32,7 @@
       requestAnimationFrame(loop);
     }
     loop();
-    // Hover state on interactive elements
-    const interactive = "a, button, .skill-card, .cert-card, .about-image, .contact-cta";
+    const interactive = "a, button, .skill-card, .cert-card, .about-image, .contact-cta, .project-card, .timeline-card";
     document.querySelectorAll(interactive).forEach((el) => {
       el.addEventListener("mouseenter", () => ring.classList.add("is-hover"));
       el.addEventListener("mouseleave", () => ring.classList.remove("is-hover"));
@@ -45,11 +44,6 @@
   if (navToggle) {
     navToggle.addEventListener("click", () => {
       document.body.classList.toggle("mobile-nav-active");
-      const icon = navToggle.querySelector("i");
-      if (icon) {
-        icon.classList.toggle("bi-list");
-        icon.classList.toggle("bi-x");
-      }
     });
   }
 
@@ -61,43 +55,50 @@
       const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Offset for fixed top header
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
       if (document.body.classList.contains("mobile-nav-active")) {
         document.body.classList.remove("mobile-nav-active");
-        const icon = navToggle && navToggle.querySelector("i");
-        if (icon) {
-          icon.classList.add("bi-list");
-          icon.classList.remove("bi-x");
-        }
       }
     });
   });
 
-  /* ---------- Scroll spy (active nav link) ---------- */
+  /* ---------- Scroll spy + scrolled header + progress ---------- */
   const navLinks = document.querySelectorAll(".nav-link.scrollto");
   const sections = Array.from(navLinks)
     .map((l) => document.querySelector(l.getAttribute("href")))
     .filter(Boolean);
+  const header = document.getElementById("header");
+  const progress = document.querySelector(".scroll-progress");
 
-  function updateActiveNav() {
-    const scrollPos = window.scrollY + window.innerHeight * 0.35;
+  function onScroll() {
+    const scrollY = window.scrollY;
+    // Scrolled header
+    if (header) header.classList.toggle("scrolled", scrollY > 40);
+    // Progress bar
+    if (progress) {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = docH > 0 ? scrollY / docH : 0;
+      progress.style.transform = `scaleX(${Math.min(ratio, 1)})`;
+    }
+    // Active nav link
+    const focal = scrollY + window.innerHeight * 0.35;
     let activeIdx = 0;
     sections.forEach((sec, i) => {
-      if (sec.offsetTop <= scrollPos) activeIdx = i;
+      if (sec.offsetTop <= focal) activeIdx = i;
     });
     navLinks.forEach((l, i) => l.classList.toggle("active", i === activeIdx));
+    // Back-to-top
+    const b = document.querySelector(".back-to-top");
+    if (b) b.classList.toggle("active", scrollY > 500);
   }
-  window.addEventListener("scroll", updateActiveNav, { passive: true });
-  updateActiveNav();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
-  /* ---------- Back to top ---------- */
-  const backToTop = document.querySelector(".back-to-top");
-  function toggleBackTop() {
-    if (!backToTop) return;
-    backToTop.classList.toggle("active", window.scrollY > 400);
-  }
-  // Inject back-to-top if not present
-  if (!backToTop) {
+  /* ---------- Back-to-top button ---------- */
+  if (!document.querySelector(".back-to-top")) {
     const btn = document.createElement("a");
     btn.href = "#hero";
     btn.className = "back-to-top scrollto";
@@ -110,10 +111,6 @@
     });
     document.body.appendChild(btn);
   }
-  window.addEventListener("scroll", () => {
-    const b = document.querySelector(".back-to-top");
-    if (b) b.classList.toggle("active", window.scrollY > 400);
-  }, { passive: true });
 
   /* ---------- Reveal on scroll ---------- */
   const reveals = document.querySelectorAll(".reveal, .skill-card, .project-card");
@@ -141,7 +138,7 @@
     });
   }
 
-  /* ---------- AOS init (kept for compatibility, mild) ---------- */
+  /* ---------- AOS init ---------- */
   if (typeof AOS !== "undefined") {
     AOS.init({
       duration: 700,
@@ -152,7 +149,68 @@
     });
   }
 
-  /* ---------- Subtle parallax on hero blobs ---------- */
+  /* ---------- 3D Tilt on cards (desktop) ---------- */
+  (function tilt() {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const cards = document.querySelectorAll(".project-card, .cert-card, .skill-card, .timeline-card");
+    cards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        const rx = (-y * 6).toFixed(2);
+        const ry = (x * 6).toFixed(2);
+        card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+      });
+    });
+  })();
+
+  /* ---------- Magnetic hover on header CTA & nav items ---------- */
+  (function magnetic() {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const targets = document.querySelectorAll(".header-cta, .btn-primary, .btn-ghost, .footer-social a");
+    targets.forEach((el) => {
+      el.addEventListener("mousemove", (e) => {
+        const r = el.getBoundingClientRect();
+        const x = e.clientX - r.left - r.width / 2;
+        const y = e.clientY - r.top - r.height / 2;
+        el.style.transform = `translate(${x * 0.2}px, ${y * 0.25}px)`;
+      });
+      el.addEventListener("mouseleave", () => {
+        el.style.transform = "";
+      });
+    });
+  })();
+
+  /* ---------- Number counter animation ---------- */
+  (function counters() {
+    const els = document.querySelectorAll("[data-counter]");
+    if (!els.length) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseFloat(el.getAttribute("data-counter"));
+        const decimals = (el.getAttribute("data-decimals") || 0) | 0;
+        const dur = 1400;
+        const start = performance.now();
+        function step(now) {
+          const p = Math.min((now - start) / dur, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(decimals);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    els.forEach((el) => obs.observe(el));
+  })();
+
+  /* ---------- Parallax on hero blobs ---------- */
   const hero = document.getElementById("hero");
   if (hero && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     hero.addEventListener("mousemove", (e) => {
