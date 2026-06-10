@@ -27,13 +27,25 @@ Muhamad Evan Fauzan — Informatics student (Bogor, Indonesia), seeking IT Suppo
 - Sections: About / Skills / Certificate / Contact
 
 ### v2 — Refinements (per user feedback)
-- **Color palette changed** from loud electric-lime + violet → sophisticated muted champagne/bronze (`#c9a87a`) + dusty slate (`#5a6478`). Body text warmed to `#ece8e0`.
-- **Typography sized down** on hero & section titles to prevent overflow on tablets/mid screens
-- **Projects section ADDED** between Skills and Certificate — `<section id="projects">` with 3 template `.project-card` blocks. Each card has number / tag / title / description / tech-stack tags / arrow link. Documented inline how to duplicate-and-edit.
-- **LinkedIn original image restored** as a featured 2-column card at top of Contact: original `linkedd.svg` on left, dark overlay panel with `Connect with me on LinkedIn` CTA on right
-- Section numbering updated: 01 About / 02 Skills / 03 Projects / 04 Certificate / 05 Contact
-- Added `nav-projects` link in side-rail with `bx-briefcase` icon
-- IntersectionObserver also targets `.project-card` for reveal-on-scroll
+- **Color palette changed** from loud electric-lime + violet → sophisticated muted champagne/bronze (`#c9a87a`) + dusty slate (`#5a6478`).
+- Typography sized down, Projects section added, LinkedIn original image restored
+
+### v3 — Navy palette + real brand logos + project photos (per user feedback)
+- **Palette swapped again** to **navy + black** (user said v2 still too bright/warm):
+  - `--accent: #4a6fa8` (muted navy blue)
+  - `--accent-2: #1a2942` (deep navy)
+  - `--bg-0: #05080f` (deeper black)
+  - White text on navy fills (`--accent-ink: #ffffff`)
+- **Real brand logos** via Iconify CDN (`api.iconify.design`):
+  - Skills: Microsoft Office (4-color), Python, PHP, Mikrotik (red), HTML5, CSS3
+  - Certificates: MikroTik logo, custom BNSP shield, custom DevOps gear, Python logo, Microsoft Office logo
+  - Contact: LinkedIn (blue), Instagram (gradient), Gmail (multicolor M), Google Maps (multicolor pin) — all in white rounded squares so brand colors pop
+- **LinkedIn card redesigned** — bright white SVG removed. Now a custom dark navy gradient card with: profile photo (`profile-img.png`) surrounded by rotating dashed accent ring + name/role/university text + LinkedIn pill + CTA arrow that turns LinkedIn-blue on hover
+- **Projects now support thumbnail photos**:
+  - Each card has a 16:10 `.project-thumb` area at the top
+  - Template includes Unsplash placeholder + a "Drop your photo here" placeholder
+  - Created `/app/frontend/public/assets/img/projects/` folder with README for user to drop images
+  - HTML comment instructs how to add images: drop file into `assets/img/projects/`, reference in `<img src="...">`
 
 ## Backlog / Future
 - P1: Add real project showcase section (no projects in current content)

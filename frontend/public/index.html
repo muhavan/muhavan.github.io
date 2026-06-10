@@ -182,7 +182,7 @@
         <div class="skill-card reveal" data-testid="skill-msoffice" style="--skill-w: 100%;">
           <div class="skill-head">
             <span class="skill-name">Microsoft Office</span>
-            <span class="skill-icon"><i class="bi bi-file-earmark-text"></i></span>
+            <span class="skill-icon"><img src="https://api.iconify.design/logos:microsoft-icon.svg" alt="Microsoft Office"></span>
           </div>
           <div class="skill-bar"><span></span></div>
           <div class="skill-meta"><span>Productivity</span><span class="skill-pct">100%</span></div>
@@ -191,7 +191,7 @@
         <div class="skill-card reveal" data-delay="1" data-testid="skill-python" style="--skill-w: 100%;">
           <div class="skill-head">
             <span class="skill-name">Python</span>
-            <span class="skill-icon"><i class="bi bi-code-slash"></i></span>
+            <span class="skill-icon"><img src="https://api.iconify.design/logos:python.svg" alt="Python"></span>
           </div>
           <div class="skill-bar"><span></span></div>
           <div class="skill-meta"><span>Programming</span><span class="skill-pct">100%</span></div>
@@ -200,7 +200,7 @@
         <div class="skill-card reveal" data-delay="2" data-testid="skill-php" style="--skill-w: 100%;">
           <div class="skill-head">
             <span class="skill-name">PHP</span>
-            <span class="skill-icon"><i class="bi bi-filetype-php"></i></span>
+            <span class="skill-icon"><img src="https://api.iconify.design/logos:php.svg" alt="PHP"></span>
           </div>
           <div class="skill-bar"><span></span></div>
           <div class="skill-meta"><span>Backend</span><span class="skill-pct">100%</span></div>
@@ -209,7 +209,7 @@
         <div class="skill-card reveal" data-testid="skill-mikrotik" style="--skill-w: 100%;">
           <div class="skill-head">
             <span class="skill-name">Mikrotik</span>
-            <span class="skill-icon"><i class="bi bi-router"></i></span>
+            <span class="skill-icon"><img src="https://api.iconify.design/simple-icons:mikrotik.svg?color=%23e11a2a" alt="Mikrotik"></span>
           </div>
           <div class="skill-bar"><span></span></div>
           <div class="skill-meta"><span>Networking</span><span class="skill-pct">100%</span></div>
@@ -217,8 +217,8 @@
 
         <div class="skill-card reveal" data-delay="1" data-testid="skill-html" style="--skill-w: 100%;">
           <div class="skill-head">
-            <span class="skill-name">HTML</span>
-            <span class="skill-icon"><i class="bi bi-filetype-html"></i></span>
+            <span class="skill-name">HTML5</span>
+            <span class="skill-icon"><img src="https://api.iconify.design/logos:html-5.svg" alt="HTML5"></span>
           </div>
           <div class="skill-bar"><span></span></div>
           <div class="skill-meta"><span>Frontend</span><span class="skill-pct">100%</span></div>
@@ -226,8 +226,8 @@
 
         <div class="skill-card reveal" data-delay="2" data-testid="skill-css" style="--skill-w: 100%;">
           <div class="skill-head">
-            <span class="skill-name">CSS</span>
-            <span class="skill-icon"><i class="bi bi-filetype-css"></i></span>
+            <span class="skill-name">CSS3</span>
+            <span class="skill-icon"><img src="https://api.iconify.design/logos:css-3.svg" alt="CSS3"></span>
           </div>
           <div class="skill-bar"><span></span></div>
           <div class="skill-meta"><span>Styling</span><span class="skill-pct">100%</span></div>
@@ -248,73 +248,96 @@
           TEMPLATE — Duplicate the <article> block below for each new project.
           Edit:
             data-testid           : unique id (project-yourname)
+            .project-thumb img    : project screenshot/photo (or remove img and keep placeholder)
             .project-num          : 01 / 02 ...
             .project-tag          : short category (e.g. Networking, Web, Python)
             h3                    : project title
             .project-desc         : short description
             .project-stack span   : tech tags
             .project-link href    : link to repo / live demo / case study
+
+          To add your own photo:
+            1) Drop your image into /assets/img/projects/ (create the folder if needed)
+            2) Change <img src="..."> below to: assets/img/projects/your-photo.jpg
         -->
 
         <article class="project-card reveal" data-testid="project-1">
           <a class="project-link" href="#" target="_blank" rel="noopener" aria-label="View project">
-            <div class="project-head">
-              <span class="project-num">01</span>
-              <span class="project-tag">Networking</span>
+            <div class="project-thumb">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=70" alt="Mikrotik Lab Topology">
             </div>
-            <div class="project-body">
-              <h3>Mikrotik Lab Topology</h3>
-              <p class="project-desc">
-                A multi-router lab simulating an enterprise WAN with VLANs, NAT and OSPF routing &mdash; built and tested end-to-end.
-              </p>
-            </div>
-            <div class="project-foot">
-              <div class="project-stack">
-                <span>Mikrotik</span><span>RouterOS</span><span>OSPF</span>
+            <div class="project-inner">
+              <div class="project-head">
+                <span class="project-num">01</span>
+                <span class="project-tag">Networking</span>
               </div>
-              <span class="project-arrow"><i class="bi bi-arrow-up-right"></i></span>
+              <div class="project-body">
+                <h3>Mikrotik Lab Topology</h3>
+                <p class="project-desc">
+                  A multi-router lab simulating an enterprise WAN with VLANs, NAT and OSPF routing &mdash; built and tested end-to-end.
+                </p>
+              </div>
+              <div class="project-foot">
+                <div class="project-stack">
+                  <span>Mikrotik</span><span>RouterOS</span><span>OSPF</span>
+                </div>
+                <span class="project-arrow"><i class="bi bi-arrow-up-right"></i></span>
+              </div>
             </div>
           </a>
         </article>
 
         <article class="project-card reveal" data-delay="1" data-testid="project-2">
           <a class="project-link" href="#" target="_blank" rel="noopener" aria-label="View project">
-            <div class="project-head">
-              <span class="project-num">02</span>
-              <span class="project-tag">Web</span>
+            <div class="project-thumb">
+              <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=70" alt="Personal Portfolio">
             </div>
-            <div class="project-body">
-              <h3>Personal Portfolio</h3>
-              <p class="project-desc">
-                This site &mdash; a hand-crafted static portfolio with bold animations, custom cursor and a focus on typography.
-              </p>
-            </div>
-            <div class="project-foot">
-              <div class="project-stack">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            <div class="project-inner">
+              <div class="project-head">
+                <span class="project-num">02</span>
+                <span class="project-tag">Web</span>
               </div>
-              <span class="project-arrow"><i class="bi bi-arrow-up-right"></i></span>
+              <div class="project-body">
+                <h3>Personal Portfolio</h3>
+                <p class="project-desc">
+                  This site &mdash; a hand-crafted static portfolio with bold animations, custom cursor and a focus on typography.
+                </p>
+              </div>
+              <div class="project-foot">
+                <div class="project-stack">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                </div>
+                <span class="project-arrow"><i class="bi bi-arrow-up-right"></i></span>
+              </div>
             </div>
           </a>
         </article>
 
         <article class="project-card reveal" data-delay="2" data-testid="project-3">
           <a class="project-link" href="#" target="_blank" rel="noopener" aria-label="View project">
-            <div class="project-head">
-              <span class="project-num">03</span>
-              <span class="project-tag">Python</span>
-            </div>
-            <div class="project-body">
-              <h3>Add your project here</h3>
-              <p class="project-desc">
-                Edit <code>public/index.html</code> &mdash; duplicate this card and replace the title, description, stack tags and link.
-              </p>
-            </div>
-            <div class="project-foot">
-              <div class="project-stack">
-                <span>Python</span><span>Automation</span>
+            <div class="project-thumb">
+              <div class="project-thumb-placeholder">
+                <i class="bi bi-image"></i>
+                Drop your photo here
               </div>
-              <span class="project-arrow"><i class="bi bi-arrow-up-right"></i></span>
+            </div>
+            <div class="project-inner">
+              <div class="project-head">
+                <span class="project-num">03</span>
+                <span class="project-tag">Python</span>
+              </div>
+              <div class="project-body">
+                <h3>Add your project here</h3>
+                <p class="project-desc">
+                  Edit <code>public/index.html</code> &mdash; duplicate this card, add your image into <code>assets/img/projects/</code> and update the title, description, stack tags and link.
+                </p>
+              </div>
+              <div class="project-foot">
+                <div class="project-stack">
+                  <span>Python</span><span>Automation</span>
+                </div>
+                <span class="project-arrow"><i class="bi bi-arrow-up-right"></i></span>
+              </div>
             </div>
           </a>
         </article>
@@ -331,6 +354,7 @@
 
       <div class="cert-grid" data-testid="cert-grid">
         <article class="cert-card reveal" data-testid="cert-mtcna">
+          <div class="cert-logo"><img src="https://api.iconify.design/simple-icons:mikrotik.svg?color=%23e11a2a" alt="MikroTik"></div>
           <div class="cert-num">001 / MTCNA</div>
           <h3>MikroTik Certified Network Associate</h3>
           <div class="cert-issuer">Issued by MikroTik</div>
@@ -340,15 +364,17 @@
         </article>
 
         <article class="cert-card reveal" data-delay="1" data-testid="cert-bnsp">
+          <div class="cert-logo" style="background:#0e2f5a;"><i class="bi bi-shield-check" style="color:#fff;font-size:1.6rem;"></i></div>
           <div class="cert-num">002 / BNSP</div>
           <h3>Junior Network Administrator</h3>
-          <div class="cert-issuer">Issued by BNSP</div>
+          <div class="cert-issuer">Issued by BNSP (Indonesia)</div>
           <button class="cert-btn" onclick="viewCertificate('bnsp')" data-testid="cert-bnsp-btn">
             View certificate <i class="bi bi-arrow-up-right"></i>
           </button>
         </article>
 
         <article class="cert-card reveal" data-delay="2" data-testid="cert-devops">
+          <div class="cert-logo" style="background:#7a3df0;"><i class="bi bi-gear-fill" style="color:#fff;font-size:1.5rem;"></i></div>
           <div class="cert-num">003 / DevOps</div>
           <h3>DevOps Essentials</h3>
           <div class="cert-issuer">Issued by Skill Academy</div>
@@ -358,6 +384,7 @@
         </article>
 
         <article class="cert-card reveal" data-testid="cert-pcap">
+          <div class="cert-logo"><img src="https://api.iconify.design/logos:python.svg" alt="Python"></div>
           <div class="cert-num">004 / PCAP</div>
           <h3>Programming Essentials in Python</h3>
           <div class="cert-issuer">Issued by Cisco / Python Institute</div>
@@ -367,6 +394,7 @@
         </article>
 
         <article class="cert-card reveal" data-delay="1" data-testid="cert-office">
+          <div class="cert-logo"><img src="https://api.iconify.design/logos:microsoft-icon.svg" alt="Microsoft Office"></div>
           <div class="cert-num">005 / MOS</div>
           <h3>Microsoft Office 2016</h3>
           <div class="cert-issuer">Issued by Certiport / Microsoft</div>
@@ -387,15 +415,22 @@
 
       <div class="contact-grid">
         <a class="linkedin-card reveal" href="https://www.linkedin.com/in/muhamad-evan-fauzan/" target="_blank" rel="noopener" data-testid="linkedin-card" aria-label="Open LinkedIn profile">
-          <img src="assets/img/linkedd.svg" alt="LinkedIn profile preview" class="linkedin-image" loading="lazy">
-          <div class="linkedin-overlay">
+          <div class="linkedin-photo">
+            <img src="assets/img/profile-img.png" alt="Muhamad Evan Fauzan" loading="lazy">
+            <div class="linkedin-photo-ring" aria-hidden="true"></div>
+          </div>
+          <div class="linkedin-body">
             <div class="linkedin-overlay-row">
-              <span class="linkedin-pill"><i class="bi bi-linkedin"></i> LinkedIn</span>
+              <span class="linkedin-pill"><img src="https://api.iconify.design/logos:linkedin-icon.svg" alt="" aria-hidden="true"> LinkedIn</span>
               <span class="linkedin-arrow"><i class="bi bi-arrow-up-right"></i></span>
             </div>
             <div>
-              <h3>Connect with me on <span class="accent">LinkedIn</span></h3>
-              <p class="linkedin-sub">View my full work history, education and recommendations &mdash; let&rsquo;s grow our network.</p>
+              <h3>Muhamad Evan <span class="accent">Fauzan</span></h3>
+              <p class="linkedin-sub">Web Enthusiast · IT Support · Network Engineer<br>Universitas Bina Sarana Informatika</p>
+            </div>
+            <div class="linkedin-cta">
+              View full profile
+              <i class="bi bi-arrow-right"></i>
             </div>
           </div>
         </a>
@@ -411,7 +446,7 @@
         <ul class="contact-list" data-testid="contact-list">
           <li>
             <a href="https://www.linkedin.com/in/muhamad-evan-fauzan/" target="_blank" rel="noopener" data-testid="contact-linkedin">
-              <span class="icon"><i class="bi bi-linkedin"></i></span>
+              <span class="icon brand"><img src="https://api.iconify.design/logos:linkedin-icon.svg" alt="LinkedIn"></span>
               <span class="meta">
                 <h4>LinkedIn</h4>
                 <p>muhamad-evan-fauzan</p>
@@ -421,7 +456,7 @@
           </li>
           <li>
             <a href="https://instagram.com/muhavann" target="_blank" rel="noopener" data-testid="contact-instagram">
-              <span class="icon"><i class="bi bi-instagram"></i></span>
+              <span class="icon brand"><img src="https://api.iconify.design/skill-icons:instagram.svg" alt="Instagram"></span>
               <span class="meta">
                 <h4>Instagram</h4>
                 <p>@muhavann</p>
@@ -431,7 +466,7 @@
           </li>
           <li>
             <a href="https://mail.google.com/mail/?view=cm&source=mailto&to=muhammad400809@gmail.com" target="_blank" rel="noopener" data-testid="contact-email">
-              <span class="icon"><i class="bi bi-envelope"></i></span>
+              <span class="icon brand"><img src="https://api.iconify.design/logos:google-gmail.svg" alt="Gmail"></span>
               <span class="meta">
                 <h4>Email</h4>
                 <p>muhammad400809@gmail.com</p>
@@ -441,7 +476,7 @@
           </li>
           <li>
             <a href="https://earth.google.com/web/@-6.34406327,106.7361878,64.02222202a,532.27611883d,35y,221.45540249h,60t,0r/data=KAI" target="_blank" rel="noopener" data-testid="contact-location">
-              <span class="icon"><i class="bi bi-geo-alt"></i></span>
+              <span class="icon brand"><img src="https://api.iconify.design/logos:google-maps.svg" alt="Google Maps"></span>
               <span class="meta">
                 <h4>Location</h4>
                 <p>Bogor, Indonesia</p>
