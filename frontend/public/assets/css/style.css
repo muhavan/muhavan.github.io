@@ -1105,6 +1105,318 @@ section {
   transform: translate(4px, -4px);
 }
 
+/* ---------- Experience Timeline ---------- */
+.experience {
+  background: linear-gradient(180deg, transparent, rgba(74, 111, 168, 0.03), transparent);
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  padding-left: 32px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--border-strong) 10%, var(--border-strong) 90%, transparent);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -32px;
+  top: 28px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--bg-0);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-dot::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  opacity: 0.3;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+.timeline-card {
+  padding: 28px 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  transition: all 0.5s var(--easing);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s var(--easing);
+}
+
+.timeline-card:hover {
+  background: var(--surface-strong);
+  border-color: var(--border-strong);
+  transform: translateX(4px);
+}
+
+.timeline-card:hover::before {
+  transform: scaleY(1);
+}
+
+.timeline-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.timeline-period {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.timeline-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: rgba(74, 111, 168, 0.12);
+  border: 1px solid rgba(74, 111, 168, 0.24);
+  border-radius: 100px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--accent-3);
+  letter-spacing: 0.08em;
+}
+
+.timeline-card h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+}
+
+.timeline-company {
+  font-size: 0.92rem;
+  color: var(--accent-3);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.timeline-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timeline-points li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.93rem;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+.timeline-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 12px;
+  height: 1px;
+  background: var(--text-3);
+}
+
+.timeline-points li strong {
+  color: var(--text-1);
+}
+
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 26px;
+  }
+  .timeline::before {
+    left: 8px;
+  }
+  .timeline-marker {
+    left: -26px;
+  }
+  .timeline-card {
+    padding: 22px 22px;
+  }
+}
+
+/* ---------- GitHub Stats ---------- */
+.github-stats {
+  margin-top: 60px;
+  padding: 36px;
+  background: linear-gradient(135deg, rgba(13, 27, 46, 0.6) 0%, rgba(10, 15, 26, 0.6) 100%);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.github-stats::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(74, 111, 168, 0.18), transparent 70%);
+  top: -50%;
+  right: -10%;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.github-stats-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.github-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--accent-3);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.github-eyebrow i {
+  font-size: 1rem;
+}
+
+.github-stats-head h3 {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.github-handle {
+  color: var(--accent-3);
+  border-bottom: 1px dashed transparent;
+  transition: border-color 0.3s var(--easing);
+}
+
+.github-handle:hover {
+  border-bottom-color: var(--accent-3);
+}
+
+.github-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-strong);
+  border-radius: 100px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-1);
+  transition: all 0.4s var(--easing);
+}
+
+.github-cta:hover {
+  background: #ffffff;
+  color: var(--accent-2);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.github-stats-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.github-card {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  background: rgba(10, 15, 26, 0.85);
+  border: 1px solid var(--border);
+  padding: 8px;
+  transition: transform 0.4s var(--easing), border-color 0.4s var(--easing);
+}
+
+.github-card:hover {
+  border-color: rgba(74, 111, 168, 0.34);
+  transform: translateY(-2px);
+}
+
+.github-card--wide {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .github-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .github-stats {
+    padding: 24px;
+  }
+}
+
 /* ---------- Projects ---------- */
 .projects {
   background: transparent;
