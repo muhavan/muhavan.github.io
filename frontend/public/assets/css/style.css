@@ -543,10 +543,37 @@ body.mobile-nav-active .mobile-nav-toggle span:nth-child(3) {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding: 80px 8% 80px 8%;
+  padding: 60px 5% 80px;
   overflow: hidden;
   background: transparent;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-portrait {
+    order: -1;
+  }
 }
 
 #hero::before {
@@ -760,7 +787,264 @@ body.mobile-nav-active .mobile-nav-toggle span:nth-child(3) {
   transform: translateX(4px);
 }
 
-/* Scroll indicator */
+/* ---------- Hero Portrait ---------- */
+.hero-portrait {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s var(--easing) 0.5s forwards;
+}
+
+.portrait-frame {
+  position: relative;
+  width: min(460px, 100%);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portrait-photo {
+  position: relative;
+  width: 78%;
+  height: 78%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0d1b2e, #050810);
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 30px 60px -20px rgba(0, 0, 0, 0.6),
+    0 0 80px -20px rgba(74, 111, 168, 0.35);
+  z-index: 3;
+  transition: transform 0.6s var(--easing);
+}
+
+.portrait-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.8s var(--easing);
+}
+
+.portrait-frame:hover .portrait-photo {
+  transform: scale(1.02);
+}
+
+.portrait-frame:hover .portrait-photo img {
+  transform: scale(1.06);
+}
+
+.portrait-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.18) 45%,
+    transparent 55%);
+  pointer-events: none;
+  transform: translateX(-100%);
+  transition: transform 1.2s var(--easing);
+}
+
+.portrait-frame:hover .portrait-shine {
+  transform: translateX(100%);
+}
+
+.portrait-glow {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(74, 111, 168, 0.45), transparent 60%);
+  filter: blur(40px);
+  z-index: 1;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+.portrait-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.portrait-ring.ring-1 {
+  inset: 0;
+  border: 1px dashed rgba(108, 139, 196, 0.45);
+  animation: spinSlow 28s linear infinite;
+}
+
+.portrait-ring.ring-1::before,
+.portrait-ring.ring-1::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 14px rgba(74, 111, 168, 0.8);
+}
+.portrait-ring.ring-1::before {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.portrait-ring.ring-1::after {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-3);
+  box-shadow: 0 0 14px rgba(108, 139, 196, 0.9);
+}
+
+.portrait-ring.ring-2 {
+  inset: 6%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(108, 139, 196, 0.5);
+  border-right-color: rgba(74, 111, 168, 0.4);
+  animation: spinReverse 14s linear infinite;
+}
+
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+  to { transform: rotate(-360deg); }
+}
+
+/* Floating tech badges */
+.portrait-badge {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(13, 27, 46, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(108, 139, 196, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  z-index: 4;
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.6);
+  animation: floatBadge 5s ease-in-out infinite;
+}
+
+.portrait-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.portrait-badge--1 {
+  top: 8%;
+  left: -2%;
+  animation-delay: 0s;
+}
+
+.portrait-badge--2 {
+  top: 38%;
+  right: -6%;
+  animation-delay: 0.7s;
+  width: 60px;
+  height: 60px;
+}
+
+.portrait-badge--3 {
+  bottom: 14%;
+  left: 2%;
+  animation-delay: 1.4s;
+  width: 50px;
+  height: 50px;
+}
+
+@keyframes floatBadge {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+/* Status tag pill */
+.portrait-tag {
+  position: absolute;
+  bottom: 4%;
+  right: -2%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(13, 27, 46, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(108, 139, 196, 0.3);
+  border-radius: 100px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-1);
+  z-index: 4;
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.6);
+  animation: floatBadge 6s ease-in-out 0.3s infinite;
+}
+
+.portrait-tag-dot {
+  width: 7px;
+  height: 7px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.7);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@media (max-width: 980px) {
+  .portrait-frame {
+    width: min(360px, 80%);
+  }
+  .portrait-badge {
+    width: 44px;
+    height: 44px;
+    padding: 9px;
+  }
+  .portrait-badge--2 {
+    width: 48px;
+    height: 48px;
+  }
+  .portrait-tag {
+    font-size: 0.66rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .portrait-frame {
+    width: min(280px, 80%);
+  }
+  .portrait-badge {
+    width: 38px;
+    height: 38px;
+    padding: 7px;
+  }
+  .portrait-badge--1 { left: 0%; }
+  .portrait-badge--3 { left: 6%; }
+}
 .scroll-indicator {
   position: absolute;
   bottom: 32px;
