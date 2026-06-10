@@ -47,6 +47,15 @@ Muhamad Evan Fauzan — Informatics student (Bogor, Indonesia), seeking IT Suppo
   - Created `/app/frontend/public/assets/img/projects/` folder with README for user to drop images
   - HTML comment instructs how to add images: drop file into `assets/img/projects/`, reference in `<img src="...">`
 
+### v4 — Programming focus + italic clipping fix
+- **Hero word-reveal animation rewritten** — old version used `overflow:hidden` on word containers which clipped the italic "n" in "Fauzan". New animation uses `opacity + translateY(40%)` fade instead, no clipping needed. Italic glyphs render fully.
+- **Skills section expanded** to reflect programming focus. Now 10 cards: **Laravel** (red logo), **Node.js** (green logo), PHP, Python, **JavaScript** (yellow logo), HTML5, CSS3, **MySQL** (blue dolphin), Mikrotik, Microsoft Office — all with official multi-color brand logos
+- **Hero typed strings** updated to: "Web Developer, Laravel Developer, Node.js Developer, Programmer, IT Support, Network Engineer, Informatics Student"
+- **About copy** updated to mention web programming focus with Laravel, Node.js, Python, PHP
+- **Marquee strip** updated to: Web Developer · Laravel · Node.js · Programmer · IT Support · Network Engineer
+- **LinkedIn card subtitle**: "Web Developer · Laravel · Node.js · IT Support"
+- **About info "Focus"**: "Web Dev · Laravel · Node.js"
+
 ## Backlog / Future
 - P1: Add real project showcase section (no projects in current content)
 - P2: Blog/writing section
