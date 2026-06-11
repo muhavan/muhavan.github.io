@@ -692,7 +692,7 @@ body.mobile-nav-active .mobile-nav-toggle span:nth-child(3) {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-style: italic;
+  font-style: bold;
   font-weight: 500;
 }
 
