@@ -2406,20 +2406,28 @@ section {
 #footer .footer-inner {
   max-width: 1400px;
   margin: 0 auto;
+
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+
   gap: 24px;
-  flex-wrap: wrap;
-  font-size: 0.85rem;
+  text-align: center;
+
+  font-size: 0.9rem;
   color: var(--text-3);
   font-family: "JetBrains Mono", monospace;
 }
 
 #footer .footer-left {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer .footer-left div {
+  text-align: center;
 }
 
 #footer .footer-inner strong {
@@ -2428,7 +2436,8 @@ section {
 
 #footer a {
   color: var(--text-2);
-  position: relative;
+  text-decoration: none;
+  transition: color .3s ease;
 }
 
 #footer a:hover {
@@ -2437,28 +2446,34 @@ section {
 
 .footer-social {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
 }
 
 .footer-social a {
-  display: inline-flex;
-  align-items: center;
+  width: 48px;
+  height: 48px;
+
+  display: flex;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  align-items: center;
+
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255,255,255,.04);
   border: 1px solid var(--border);
+
   color: var(--text-2);
-  font-size: 1.1rem;
-  transition: all 0.4s var(--easing);
+  font-size: 22px;
+
+  transition: .35s ease;
 }
 
 .footer-social a:hover {
-  color: var(--accent-ink);
   background: var(--accent);
   border-color: var(--accent);
-  transform: translateY(-3px) rotate(-6deg);
+  color: var(--accent-ink);
+  transform: translateY(-4px);
 }
 
 /* ---------- Back to top ---------- */
