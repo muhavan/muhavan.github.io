@@ -56,7 +56,7 @@
       if (!target) return;
       e.preventDefault();
       // Offset for fixed top header
-      const offset = 0;
+      const offset = 20;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: "smooth" });
       if (document.body.classList.contains("mobile-nav-active")) {
