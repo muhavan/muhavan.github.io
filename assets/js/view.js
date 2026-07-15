@@ -11,12 +11,12 @@
     const urls = {
       mtcna         : 'https://mikrotik.com/training/certificates/c283552c346308462ad1',
       bnsp          : 'https://drive.google.com/file/d/12pkNCYx-EOaIxRB1K2sgHK9skHHClOpU/view?usp=sharing',
-      bnspmadya     : '#',
+      bnspmadya     : 'https://drive.google.com/file/d/1drKuYFDiuDBVUlT6akZsr_oLgRQBxJFU/view?usp=sharing',
       devops        : 'https://skillacademy.com/sertifikat/XS17WZI23OZPW4',
       pcap          : 'https://drive.google.com/file/d/1lCJfyeUhQD8QDKVZtF_l8ya585XITA-A/view?usp=sharing',
       office2016    : 'https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=250&cvid=4uic0pDpCwufi+c014eLLA==',
-      ethicalhacker : '#',
-      toefl         : '#'
+      ethicalhacker : 'https://drive.google.com/file/d/11ALhh-AAH-cXjgSQHtChRaxLCCOyt3Tb/view?usp=sharing',
+      toefl         : 'https://drive.google.com/file/d/1HMb9ycpARhAGCJLOJ4ln1M3OoT6KSklg/view?usp=sharing',
       // Update the '#' URLs with actual certificate links when available.
     };
 
