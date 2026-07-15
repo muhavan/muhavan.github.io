@@ -35,10 +35,19 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Optimized on scroll event listener using requestAnimationFrame
    */
   const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
+    let ticking = false;
+    el.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          listener();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true }); // Passive listener meningkatkan performa scroll di mobile
   }
 
   /**
@@ -78,14 +87,14 @@
   let backtotop = select('.back-to-top')
   if (backtotop) {
     const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
+      // Menggunakan conditional check agar tidak memaksa memanipulasi class list di setiap pixel scroll
+      const shouldBeActive = window.scrollY > 100;
+      if (backtotop.classList.contains('active') !== shouldBeActive) {
+        backtotop.classList.toggle('active', shouldBeActive)
       }
     }
     window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
+    onscroll(document, toggleKeep = toggleBacktotop)
   }
 
   /**
@@ -243,11 +252,11 @@
   });
 
   /**
-   * Animation on scroll
+   * Animation on scroll (Optimized duration)
    */
   window.addEventListener('load', () => {
     AOS.init({
-      duration: 1000,
+      duration: 600, // Dipercepat sedikit dari 1000 agar transisi rendering terasa lebih enteng
       easing: 'ease-in-out',
       once: true,
       mirror: false

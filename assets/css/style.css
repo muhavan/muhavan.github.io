@@ -1826,6 +1826,7 @@ section {
   background: var(--surface);
   border: 1px solid var(--border);
   transition: all 0.5s var(--easing);
+  will-change: transform; /* Tambahan untuk optimasi performa scroll agar tidak patah-patah */
 }
 
 .project-card::after {
@@ -1860,18 +1861,21 @@ section {
   height: 100%;
 }
 
+/* Frame Pembungkus Gambar */
 .project-card .project-thumb {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16/10;
+  aspect-ratio: 16/10; /* Mengunci rasio agar semua card tingginya sama rata */
   background: linear-gradient(135deg, var(--bg-2), var(--bg-1));
   border-bottom: 1px solid var(--border);
 }
 
+/* Gambar di dalam Frame (Auto Fit & Rapi) */
 .project-card .project-thumb img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 100%;         
+  object-fit: fill;    
+  object-position: center; 
   transition: transform 0.8s var(--easing);
 }
 
