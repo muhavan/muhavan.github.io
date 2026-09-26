@@ -20,6 +20,7 @@
         certificate: "Sertifikat",
         contact: "Kontak",
         cv: "CV",
+        download_cv: "Unduh CV",
       },
       hero: {
         eyebrow: "Tersedia untuk bekerja · Bogor, Indonesia",
@@ -146,6 +147,7 @@
         certificate: "Certificate",
         contact: "Contact",
         cv: "CV",
+        download_cv: "Download CV",
       },
       hero: {
         eyebrow: "Available for work · Bogor, Indonesia",

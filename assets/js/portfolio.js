@@ -78,6 +78,26 @@
     });
   }
 
+  // Close mobile nav when clicking CV button
+  const cvBtnMobile = document.querySelector(".cv-btn-mobile");
+  if (cvBtnMobile) {
+    cvBtnMobile.addEventListener("click", () => {
+      if (document.body.classList.contains("mobile-nav-active")) {
+        document.body.classList.remove("mobile-nav-active");
+      }
+    });
+  }
+
+  // Close mobile nav when clicking outside header
+  document.addEventListener("click", (e) => {
+    if (document.body.classList.contains("mobile-nav-active")) {
+      const header = document.getElementById("header");
+      if (header && !header.contains(e.target)) {
+        document.body.classList.remove("mobile-nav-active");
+      }
+    }
+  });
+
   /* ---------- Smooth scroll for scrollto links ---------- */
   document.querySelectorAll(".scrollto").forEach((link) => {
     link.addEventListener("click", (e) => {
