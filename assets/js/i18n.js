@@ -8,6 +8,10 @@
 
   const translations = {
     id: {
+      meta: {
+        title: "Muhavan Official — Web Developer & Network Engineer",
+        desc: "Portofolio resmi Muhamad Evan Fauzan — Lulusan S1 Teknologi Informasi, Web Developer, IT Support, dan Network Engineer.",
+      },
       brand: {
         sub: "Website Resmi",
       },
@@ -54,6 +58,14 @@
         title_pre: "Peralatan teknis ",
         title_accent: "yang siap pakai.",
         subtitle: "Bahasa pemrograman, framework, dan perangkat lunak yang saya gunakan sehari-hari.",
+        stat_tech: "Teknologi Dikuasai",
+        stat_tech_sub: "Full Stack & Jaringan",
+        stat_gpa: "IPK Kelulusan TI",
+        stat_gpa_sub: "Predikat Sangat Memuaskan",
+        stat_cert: "Sertifikasi Resmi",
+        stat_cert_sub: "MTCNA, BNSP, Cisco",
+        stat_prod: "Siap Produksi",
+        stat_prod_sub: "Clean Architecture",
       },
       experience: {
         label: "03 — Pengalaman",
@@ -83,7 +95,7 @@
         label: "04 — Proyek",
         title_pre: "Karya yang telah ",
         title_accent: "saya bangun.",
-        subtitle: "Proyek pilihan &mdash; dari aplikasi web, platform SaaS, bot AI, hingga integrasi sistem nyata.",
+        subtitle: "Proyek pilihan &mdash; dari aplikasi web, platform SaaS, hingga integrasi sistem nyata.",
         p1_tag: "SaaS / Web App",
         p1_title: "fotodarikamu • Kamera Sekali Pakai Digital Pernikahan & Acara",
         p1_desc: "Layanan kamera sekali pakai digital untuk resepsi pernikahan dan acara di Indonesia. Tamu memotret langsung lewat pemindaian QR code tanpa perlu install aplikasi, dengan filter film vintage retro 35mm, dan seluruh foto otomatis terkumpul dalam satu album bersama.",
@@ -111,6 +123,7 @@
         title_accent: "bukan sekadar janji.",
         subtitle: "Sertifikasi resmi yang telah saya raih sepanjang perjalanan teknologi saya.",
         c1_issuer: "Diterbitkan oleh MikroTik",
+        c2_title: "Network Administrator Madya",
         c2_issuer: "Diterbitkan oleh BNSP (Indonesia)",
         c3_issuer: "Diterbitkan oleh BNSP (Indonesia)",
         c4_issuer: "Diterbitkan oleh Cisco / Python Institute",
@@ -138,6 +151,10 @@
     },
 
     en: {
+      meta: {
+        title: "Muhavan Official — Web Developer & Network Engineer",
+        desc: "Official portfolio of Muhamad Evan Fauzan — Bachelor of Information Technology, Web Developer, IT Support, and Network Engineer.",
+      },
       brand: {
         sub: "Official Website",
       },
@@ -154,8 +171,8 @@
       },
       hero: {
         eyebrow: "Available for work · Bogor, Indonesia",
-        subtitle_prefix: "I&rsquo;m ",
-        typed_items: "Web Developer, IT Support, Network Engineer, Informatics Graduate",
+        subtitle_prefix: "I&rsquo;m a ",
+        typed_items: "Web Developer, IT Support Specialist, Network Engineer, IT Graduate",
         cta_contact: "Let&rsquo;s talk",
         cta_about: "About me",
         scroll: "Scroll",
@@ -165,14 +182,14 @@
         title_pre: "Hello, ",
         title_accent: "I&rsquo;m Evan.",
         subtitle: "An Information Technology graduate passionate about web development, networking, and IT support — building reliable systems and ready to make professional impact.",
-        headline_pre: "Informatics graduate focused on ",
+        headline_pre: "Information Technology graduate focused on ",
         headline_accent: "web programming",
         desc: "Information Technology graduate from <strong>Bina Sarana Informatika University</strong> (GPA <strong>3.74</strong>, graduated September 2026). Passionate about web development &mdash; building things with Laravel, Node.js, and modern web technologies. I also have hands-on experience in IT Support, Network Engineering and Cyber Security, with skills in Python, PHP, and Mikrotik. Comfortable across the stack, ready to make positive contributions in a dynamic technology environment.",
         info_name: "Name",
         info_city: "City",
         info_city_val: "Bogor, Indonesia",
         info_education: "Education",
-        info_education_val: "Universitas Bina Sarana Informatika",
+        info_education_val: "Bina Sarana Informatika University",
         info_gpa: "GPA",
         info_email: "Email",
         info_focus: "Focus",
@@ -184,6 +201,14 @@
         title_pre: "A toolbox ",
         title_accent: "that ships.",
         subtitle: "Programming languages, frameworks and tools I work with day to day.",
+        stat_tech: "Mastered Tech",
+        stat_tech_sub: "Full Stack & Network",
+        stat_gpa: "Graduation GPA",
+        stat_gpa_sub: "Graduated with Honors",
+        stat_cert: "Certifications",
+        stat_cert_sub: "MTCNA, BNSP, Cisco",
+        stat_prod: "Production Ready",
+        stat_prod_sub: "Clean Architecture",
       },
       experience: {
         label: "03 — Experience",
@@ -213,7 +238,7 @@
         label: "04 — Projects",
         title_pre: "Things I&rsquo;ve ",
         title_accent: "built.",
-        subtitle: "Selected work &mdash; from web platforms and SaaS apps to AI bots and live systems.",
+        subtitle: "Selected work &mdash; from web platforms and SaaS apps to live systems.",
         p1_tag: "SaaS / Web App",
         p1_title: "fotodarikamu • Digital Disposable Camera for Weddings & Events",
         p1_desc: "A digital disposable camera service for weddings and celebrations in Indonesia. Guests capture candid memories directly by scanning a QR code without installing any app, styled with aesthetic 35mm vintage film filters, automatically gathering in a shared live album.",
@@ -221,7 +246,7 @@
         p2_title: "Nasi Goreng Jasun • Restaurant Ordering & Digital Menu System",
         p2_desc: "A digital food ordering system for Nasi Goreng Jasun restaurant. Supports Dine-in with table selection and queue-free Take Away, featuring an interactive menu catalog, instant cart calculation, and streamlined order workflow.",
         p3_tag: "Internship",
-        p3_title: "Sistem Informasi UMKM & Pariwisata Dinas Pariwisata Tangsel",
+        p3_title: "MSME & Tourism Information System • South Tangerang Tourism Office",
         p3_desc: "Built for Dinas Pariwisata Kota Tangerang Selatan during my internship. A web platform for UMKM business submissions and a tourism information system featuring destinations across the region.",
         p4_tag: "Web App",
         p4_title: "Karyawanku &mdash; Employee Management System",
@@ -241,6 +266,7 @@
         title_accent: "not promises.",
         subtitle: "Official certifications I&rsquo;ve earned along the journey.",
         c1_issuer: "Issued by MikroTik",
+        c2_title: "Intermediate Network Administrator",
         c2_issuer: "Issued by BNSP (Indonesia)",
         c3_issuer: "Issued by BNSP (Indonesia)",
         c4_issuer: "Issued by Cisco / Python Institute",
@@ -255,7 +281,7 @@
         title_pre: "Let&rsquo;s build ",
         title_accent: "something good.",
         subtitle: "Open to opportunities, collaborations and a friendly chat about networks.",
-        linkedin_sub: "Web Developer · Laravel · Node.js · IT Support<br>Universitas Bina Sarana Informatika",
+        linkedin_sub: "Web Developer · Laravel · Node.js · IT Support<br>Bina Sarana Informatika University",
         linkedin_cta: "View full profile",
         box_title: "Got an idea? <br><span class=\"accent\">Let&rsquo;s talk.</span>",
         box_desc: "Drop me an email or message — I usually reply within a day.",
@@ -286,6 +312,19 @@
     // Update document lang
     document.documentElement.lang = lang;
 
+    // Update dynamic meta and document title
+    if (dict.meta) {
+      if (dict.meta.title) document.title = dict.meta.title;
+      if (dict.meta.desc) {
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute("content", dict.meta.desc);
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute("content", dict.meta.desc);
+        const twDesc = document.querySelector('meta[name="twitter:description"]');
+        if (twDesc) twDesc.setAttribute("content", dict.meta.desc);
+      }
+    }
+
     // Update all elements with data-i18n
     const elements = document.querySelectorAll("[data-i18n]");
     elements.forEach((el) => {
@@ -298,8 +337,9 @@
 
     // Update language switcher active states
     document.querySelectorAll(".lang-btn").forEach((btn) => {
-      btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
-      btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === lang ? "true" : "false");
+      const isActive = btn.getAttribute("data-lang") === lang;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
 
     // Update Typed.js items if initialized
@@ -308,10 +348,18 @@
       const newItems = dict.hero.typed_items;
       typedEl.setAttribute("data-typed-items", newItems);
 
-      // If Typed instance exists, destroy and re-create smoothly
+      // If Typed instance exists, destroy cleanly
       if (window.typedInstance) {
-        window.typedInstance.destroy();
+        try {
+          window.typedInstance.destroy();
+        } catch (e) {}
+        window.typedInstance = null;
       }
+
+      // Remove leftover typed cursors and wipe text content to prevent ghost characters
+      document.querySelectorAll(".typed-cursor").forEach((c) => c.remove());
+      typedEl.textContent = "";
+
       if (typeof Typed !== "undefined") {
         window.typedInstance = new Typed(".typed", {
           strings: newItems.split(",").map((s) => s.trim()),

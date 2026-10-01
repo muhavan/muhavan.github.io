@@ -273,116 +273,260 @@
         </p>
       </div>
 
+      <!-- Skills Overview Stats Banner -->
+      <div class="skills-stats-banner reveal" data-testid="skills-stats-banner">
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="bi bi-stack"></i></div>
+          <div class="stat-content">
+            <div class="stat-value"><span data-counter="12">12</span><span class="stat-plus">+</span></div>
+            <div class="stat-title" data-i18n="skills.stat_tech">Teknologi Dikuasai</div>
+            <div class="stat-sub" data-i18n="skills.stat_tech_sub">Full Stack &amp; Network</div>
+          </div>
+        </div>
+        <div class="stat-card reveal" data-delay="1">
+          <div class="stat-icon"><i class="bi bi-mortarboard-fill"></i></div>
+          <div class="stat-content">
+            <div class="stat-value"><span data-counter="3.74" data-decimals="2">3.74</span></div>
+            <div class="stat-title" data-i18n="skills.stat_gpa">IPK Kelulusan TI</div>
+            <div class="stat-sub" data-i18n="skills.stat_gpa_sub">Predikat Sangat Memuaskan</div>
+          </div>
+        </div>
+        <div class="stat-card reveal" data-delay="2">
+          <div class="stat-icon"><i class="bi bi-patch-check-fill"></i></div>
+          <div class="stat-content">
+            <div class="stat-value"><span data-counter="8">8</span><span class="stat-plus">x</span></div>
+            <div class="stat-title" data-i18n="skills.stat_cert">Sertifikasi Resmi</div>
+            <div class="stat-sub" data-i18n="skills.stat_cert_sub">MTCNA, BNSP, Cisco</div>
+          </div>
+        </div>
+        <div class="stat-card reveal" data-delay="3">
+          <div class="stat-icon"><i class="bi bi-terminal-fill"></i></div>
+          <div class="stat-content">
+            <div class="stat-value"><span data-counter="100">100</span><span class="stat-plus">%</span></div>
+            <div class="stat-title" data-i18n="skills.stat_prod">Siap Produksi</div>
+            <div class="stat-sub" data-i18n="skills.stat_prod_sub">Clean Architecture</div>
+          </div>
+        </div>
+      </div>
+
       <div class="skills-grid" data-testid="skills-grid">
-        <div class="skill-card reveal" data-testid="skill-laravel" style="--skill-w: 100%;">
+        <div class="skill-card reveal" data-testid="skill-laravel">
+          <div class="skill-spotlight-border" aria-hidden="true"></div>
           <div class="skill-head">
-            <span class="skill-name">Laravel</span>
+            <div class="skill-info">
+              <span class="skill-name">Laravel</span>
+              <span class="skill-category">PHP Framework</span>
+            </div>
             <span class="skill-icon"><img src="https://api.iconify.design/logos:laravel.svg" alt="Laravel"></span>
           </div>
-          <div class="skill-bar"><span></span></div>
-          <div class="skill-meta"><span>PHP Framework</span><span class="skill-pct">100%</span></div>
+          <div class="skill-tags">
+            <span>MVC</span><span>Eloquent ORM</span><span>REST API</span><span>Blade</span>
+          </div>
+          <div class="skill-foot">
+            <span class="skill-badge skill-badge--core"><i class="bi bi-lightning-charge-fill"></i> Core Stack</span>
+            <span class="skill-status">Production Ready</span>
+          </div>
         </div>
 
-        <div class="skill-card reveal" data-delay="1" data-testid="skill-nodejs" style="--skill-w: 100%;">
+        <div class="skill-card reveal" data-delay="1" data-testid="skill-nodejs">
+          <div class="skill-spotlight-border" aria-hidden="true"></div>
           <div class="skill-head">
-            <span class="skill-name">Node.js</span>
+            <div class="skill-info">
+              <span class="skill-name">Node.js</span>
+              <span class="skill-category">JS Runtime</span>
+            </div>
             <span class="skill-icon"><img src="https://api.iconify.design/logos:nodejs-icon.svg" alt="Node.js"></span>
           </div>
-          <div class="skill-bar"><span></span></div>
-          <div class="skill-meta"><span>JS Runtime</span><span class="skill-pct">100%</span></div>
+          <div class="skill-tags">
+            <span>Asynchronous</span><span>Event-Driven</span><span>Backend API</span><span>npm</span>
+          </div>
+          <div class="skill-foot">
+            <span class="skill-badge skill-badge--core"><i class="bi bi-lightning-charge-fill"></i> Core Stack</span>
+            <span class="skill-status">High Concurrency</span>
+          </div>
         </div>
 
-        <div class="skill-card reveal" data-testid="skill-python" style="--skill-w: 100%;">
+        <div class="skill-card reveal" data-testid="skill-python">
+          <div class="skill-spotlight-border" aria-hidden="true"></div>
           <div class="skill-head">
-            <span class="skill-name">Python</span>
+            <div class="skill-info">
+              <span class="skill-name">Python</span>
+              <span class="skill-category">Programming</span>
+            </div>
             <span class="skill-icon"><img src="https://api.iconify.design/logos:python.svg" alt="Python"></span>
           </div>
-          <div class="skill-bar"><span></span></div>
-          <div class="skill-meta"><span>Programming</span><span class="skill-pct">100%</span></div>
+          <div class="skill-tags">
+            <span>Flask</span><span>Cryptography</span><span>Automation</span><span>Scripting</span>
+          </div>
+          <div class="skill-foot">
+            <span class="skill-badge skill-badge--cert"><i class="bi bi-patch-check-fill"></i> Cisco PCAP</span>
+            <span class="skill-status">Cyber &amp; AI</span>
+          </div>
         </div>
 
-        <div class="skill-card reveal" data-delay="1" data-testid="skill-expressjs" style="--skill-w: 100%;">
+        <div class="skill-card reveal" data-delay="1" data-testid="skill-expressjs">
+          <div class="skill-spotlight-border" aria-hidden="true"></div>
           <div class="skill-head">
-            <span class="skill-name">Express.js</span>
+            <div class="skill-info">
+              <span class="skill-name">Express.js</span>
+              <span class="skill-category">JS Framework</span>
+            </div>
             <span class="skill-icon"><img src="https://api.iconify.design/logos:nodejs-icon.svg"
                 alt="Express.js"></span>
           </div>
-          <div class="skill-bar"><span></span></div>
-          <div class="skill-meta"><span>JS Framework</span><span class="skill-pct">100%</span></div>
+          <div class="skill-tags">
+            <span>Routing</span><span>Middleware</span><span>Microservices</span><span>JSON API</span>
+          </div>
+          <div class="skill-foot">
+            <span class="skill-badge skill-badge--adv"><i class="bi bi-stars"></i> Advanced</span>
+            <span class="skill-status">RESTful Backend</span>
+          </div>
         </div>
 
-        <div class="skill-card reveal" data-delay="2" data-testid="skill-php" style="--skill-w: 100%;">
+        <div class="skill-card reveal" data-delay="2" data-testid="skill-php">
+          <div class="skill-spotlight-border" aria-hidden="true"></div>
           <div class="skill-head">
-            <span class="skill-name">PHP</span>
+            <div class="skill-info">
+              <span class="skill-name">PHP</span>
+              <span class="skill-category">Backend Language</span>
+            </div>
             <span class="skill-icon"><img src="https://api.iconify.design/logos:php.svg" alt="PHP"></span>
           </div>
-          <div class="skill-bar"><span></span></div>
-          <div class="skill-meta"><span>Backend</span><span class="skill-pct">100%</span></div>
+          <div class="skill-tags">
+            <span>OOP</span><span>Server-Side</span><span>PDO</span><span>Secure Auth</span>
+          </div>
+          <div class="skill-foot">
+            <span class="skill-badge skill-badge--adv"><i class="bi bi-stars"></i> Advanced</span>
+            <span class="skill-status">Enterprise Ready</span>
+          </div>
         </div>
 
-        <div class="skill-card reveal" data-delay="1" data-testid="skill-javascript" style="--skill-w: 100%;">
+        <div class="skill-card reveal" data-delay="1" data-testid="skill-javascript">
+          <div class="skill-spotlight-border" aria-hidden="true"></div>
           <div class="skill-head">
-            <span class="skill-name">JavaScript</span>
+            <div class="skill-info">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-category">Web Programming</span>
+            </div>
             <span class="skill-icon"><img src="https://api.iconify.design/logos:javascript.svg" alt="JavaScript"></span>
           </div>
-          <div class="skill-bar"><span></span></div>
-          <div class="skill-meta"><span>Web Programming</span><span class="skill-pct">100%</span></div>
+          <div class="skill-tags">
+            <span>ES6+</span><span>DOM APIs</span><span>Async / Await</span><span>Modern Web</span>
+          </div>
+          <div class="skill-foot">
+            <span class="skill-badge skill-badge--core"><i class="bi bi-lightning-charge-fill"></i> Core Stack</span>
+            <span class="skill-status">Interactive UI</span>
+          </div>
         </div>
 
-        <div class="skill-card reveal" data-delay="2" data-testid="skill-html" style="--skill-w: 100%;">
+        <div class="skill-card reveal" data-delay="2" data-testid="skill-html">
+          <div class="skill-spotlight-border" aria-hidden="true"></div>
           <div class="skill-head">
-            <span class="skill-name">HTML5</span>
+            <div class="skill-info">
+              <span class="skill-name">HTML5</span>
+              <span class="skill-category">Frontend Markup</span>
+            </div>
             <span class="skill-icon"><img src="https://api.iconify.design/logos:html-5.svg" alt="HTML5"></span>
           </div>
-          <div class="skill-bar"><span></span></div>
-          <div class="skill-meta"><span>Frontend</span><span class="skill-pct">100%</span></div>
+          <div class="skill-tags">
+            <span>Semantic Tags</span><span>Accessibility</span><span>SEO Structure</span><span>Web Standards</span>
+          </div>
+          <div class="skill-foot">
+            <span class="skill-badge skill-badge--master"><i class="bi bi-check-circle-fill"></i> Mastery</span>
+            <span class="skill-status">W3C Compliant</span>
+          </div>
         </div>
 
-        <div class="skill-card reveal" data-testid="skill-css" style="--skill-w: 100%;">
+        <div class="skill-card reveal" data-testid="skill-css">
+          <div class="skill-spotlight-border" aria-hidden="true"></div>
           <div class="skill-head">
-            <span class="skill-name">CSS3</span>
+            <div class="skill-info">
+              <span class="skill-name">CSS3</span>
+              <span class="skill-category">Styling &amp; Design</span>
+            </div>
             <span class="skill-icon"><img src="https://api.iconify.design/logos:css-3.svg" alt="CSS3"></span>
           </div>
-          <div class="skill-bar"><span></span></div>
-          <div class="skill-meta"><span>Styling</span><span class="skill-pct">100%</span></div>
+          <div class="skill-tags">
+            <span>Flexbox &amp; Grid</span><span>Keyframes</span><span>Glassmorphism</span><span>Responsive UI</span>
+          </div>
+          <div class="skill-foot">
+            <span class="skill-badge skill-badge--master"><i class="bi bi-check-circle-fill"></i> Mastery</span>
+            <span class="skill-status">Pixel Perfect</span>
+          </div>
         </div>
 
-        <div class="skill-card reveal" data-delay="1" data-testid="skill-mysql" style="--skill-w: 100%;">
+        <div class="skill-card reveal" data-delay="1" data-testid="skill-mysql">
+          <div class="skill-spotlight-border" aria-hidden="true"></div>
           <div class="skill-head">
-            <span class="skill-name">MySQL</span>
+            <div class="skill-info">
+              <span class="skill-name">MySQL</span>
+              <span class="skill-category">Relational Database</span>
+            </div>
             <span class="skill-icon"><img src="https://api.iconify.design/logos:mysql.svg" alt="MySQL"></span>
           </div>
-          <div class="skill-bar"><span></span></div>
-          <div class="skill-meta"><span>Database</span><span class="skill-pct">100%</span></div>
+          <div class="skill-tags">
+            <span>Schemas</span><span>Indexing</span><span>Complex Joins</span><span>Transactions</span>
+          </div>
+          <div class="skill-foot">
+            <span class="skill-badge skill-badge--adv"><i class="bi bi-database-fill"></i> Database</span>
+            <span class="skill-status">High Integrity</span>
+          </div>
         </div>
 
-        <div class="skill-card reveal" data-delay="1" data-testid="skill-postgresql" style="--skill-w: 100%;">
+        <div class="skill-card reveal" data-delay="1" data-testid="skill-postgresql">
+          <div class="skill-spotlight-border" aria-hidden="true"></div>
           <div class="skill-head">
-            <span class="skill-name">PostgreSQL</span>
+            <div class="skill-info">
+              <span class="skill-name">PostgreSQL</span>
+              <span class="skill-category">Advanced RDBMS</span>
+            </div>
             <span class="skill-icon"><img src="https://api.iconify.design/logos:postgresql.svg" alt="PostgreSQL"></span>
           </div>
-          <div class="skill-bar"><span></span></div>
-          <div class="skill-meta"><span>Database</span><span class="skill-pct">100%</span></div>
+          <div class="skill-tags">
+            <span>ACID Compliant</span><span>Complex Queries</span><span>JSONB</span><span>Data Integrity</span>
+          </div>
+          <div class="skill-foot">
+            <span class="skill-badge skill-badge--adv"><i class="bi bi-database-fill"></i> Database</span>
+            <span class="skill-status">Enterprise DB</span>
+          </div>
         </div>
 
-        <div class="skill-card reveal" data-delay="2" data-testid="skill-mikrotik" style="--skill-w: 100%;">
+        <div class="skill-card reveal" data-delay="2" data-testid="skill-mikrotik">
+          <div class="skill-spotlight-border" aria-hidden="true"></div>
           <div class="skill-head">
-            <span class="skill-name">Mikrotik</span>
+            <div class="skill-info">
+              <span class="skill-name">Mikrotik</span>
+              <span class="skill-category">Networking &amp; Routing</span>
+            </div>
             <span class="skill-icon"><img src="https://api.iconify.design/simple-icons:mikrotik.svg?color=%23e11a2a"
                 alt="Mikrotik"></span>
           </div>
-          <div class="skill-bar"><span></span></div>
-          <div class="skill-meta"><span>Networking</span><span class="skill-pct">100%</span></div>
+          <div class="skill-tags">
+            <span>RouterOS</span><span>Bandwidth Queue</span><span>Firewall Filter</span><span>VLAN &amp; VPN</span>
+          </div>
+          <div class="skill-foot">
+            <span class="skill-badge skill-badge--cert"><i class="bi bi-patch-check-fill"></i> MTCNA Certified</span>
+            <span class="skill-status">Network Engineer</span>
+          </div>
         </div>
 
-        <div class="skill-card reveal" data-testid="skill-msoffice" style="--skill-w: 100%;">
+        <div class="skill-card reveal" data-testid="skill-msoffice">
+          <div class="skill-spotlight-border" aria-hidden="true"></div>
           <div class="skill-head">
-            <span class="skill-name">Microsoft Office</span>
+            <div class="skill-info">
+              <span class="skill-name">Microsoft Office</span>
+              <span class="skill-category">Productivity &amp; Data</span>
+            </div>
             <span class="skill-icon"><img src="https://api.iconify.design/logos:microsoft-icon.svg"
                 alt="Microsoft Office"></span>
           </div>
-          <div class="skill-bar"><span></span></div>
-          <div class="skill-meta"><span>Productivity</span><span class="skill-pct">100%</span></div>
+          <div class="skill-tags">
+            <span>MOS Word 2016</span><span>Excel Formulas</span><span>Data Reporting</span><span>Documentation</span>
+          </div>
+          <div class="skill-foot">
+            <span class="skill-badge skill-badge--cert"><i class="bi bi-patch-check-fill"></i> MOS Certified</span>
+            <span class="skill-status">Certiport Official</span>
+          </div>
         </div>
       </div>
     </section>
@@ -428,7 +572,7 @@
           </div>
           <article class="timeline-card">
             <div class="timeline-meta">
-              <span class="timeline-period" data-i18n="experience.exp2_period">Sep 2022 — Sep 2024</span>
+              <span class="timeline-period" data-i18n="experience.exp2_period">Sep 2022 — Sep 2026</span>
               <span class="timeline-pill" data-i18n="experience.exp2_pill">Pendidikan</span>
             </div>
             <h3 data-i18n="experience.exp2_role">S1 — Teknologi Informasi</h3>
@@ -478,6 +622,7 @@
 
       <div class="projects-grid" data-testid="projects-grid">
         <article class="project-card reveal" data-testid="project-fotodarikamu">
+          <div class="project-spotlight-border" aria-hidden="true"></div>
           <a class="project-link" href="https://fotodarikamu.id" target="_blank" rel="noopener"
             aria-label="View fotodarikamu project">
             <div class="project-thumb">
@@ -508,6 +653,7 @@
         </article>
 
         <article class="project-card reveal" data-delay="1" data-testid="project-nasgorjasun">
+          <div class="project-spotlight-border" aria-hidden="true"></div>
           <a class="project-link" href="https://nasgorjasun.my.id" target="_blank" rel="noopener"
             aria-label="View Nasi Goreng Jasun project">
             <div class="project-thumb">
@@ -538,6 +684,7 @@
         </article>
 
         <article class="project-card reveal" data-delay="2" data-testid="project-dispar">
+          <div class="project-spotlight-border" aria-hidden="true"></div>
           <a class="project-link" href="https://umkm-tangsel.vercel.app/" target="_blank" rel="noopener"
             aria-label="View Dinas Pariwisata project">
             <div class="project-thumb">
@@ -566,6 +713,7 @@
         </article>
 
         <article class="project-card reveal" data-delay="3" data-testid="project-karyawanku">
+          <div class="project-spotlight-border" aria-hidden="true"></div>
           <a class="project-link" href="#" target="_blank" rel="noopener" aria-label="View Karyawanku project">
             <div class="project-thumb">
               <img src="assets/img/projects/karyawanku.png" alt="Karyawanku Employee Management System" loading="lazy">
@@ -593,6 +741,7 @@
         </article>
 
         <article class="project-card reveal" data-delay="4" data-testid="project-kriptografi">
+          <div class="project-spotlight-border" aria-hidden="true"></div>
           <a class="project-link" href="https://kriptografi.web.id/" target="_blank" rel="noopener"
             aria-label="View KriptoHybrid project">
             <div class="project-thumb">
@@ -678,7 +827,7 @@
           <div class="cert-logo" style="background:#0e2f5a;"><i class="bi bi-patch-check-fill"
               style="color:#fff;font-size:1.6rem;"></i></div>
           <div class="cert-num">002 / BNSP</div>
-          <h3>Network Administrator Madya</h3>
+          <h3 data-i18n="certificates.c2_title">Network Administrator Madya</h3>
           <div class="cert-issuer" data-i18n="certificates.c2_issuer">Diterbitkan oleh BNSP (Indonesia)</div>
           <button class="cert-btn" onclick="viewCertificate('bnspmadya')" data-testid="cert-bnsp-madya-btn">
             <span data-i18n="certificates.view_btn">Lihat sertifikat</span> <i class="bi bi-arrow-left"></i>
@@ -801,7 +950,7 @@
         </div>
 
         <ul class="contact-list" data-testid="contact-list">
-          <li>
+          <li class="reveal" data-delay="1">
             <a href="https://www.linkedin.com/in/muhamad-evan-fauzan/" target="_blank" rel="noopener"
               data-testid="contact-linkedin">
               <span class="icon brand"><img src="https://api.iconify.design/logos:linkedin-icon.svg"
@@ -813,7 +962,7 @@
               <span class="arrow"><i class="bi bi-arrow-left"></i></span>
             </a>
           </li>
-          <li>
+          <li class="reveal" data-delay="2">
             <a href="https://instagram.com/muhavann" target="_blank" rel="noopener" data-testid="contact-instagram">
               <span class="icon brand"><img src="https://api.iconify.design/skill-icons:instagram.svg"
                   alt="Instagram"></span>
@@ -824,7 +973,7 @@
               <span class="arrow"><i class="bi bi-arrow-left"></i></span>
             </a>
           </li>
-          <li>
+          <li class="reveal" data-delay="3">
             <a href="https://mail.google.com/mail/?view=cm&source=mailto&to=muhammad400809@gmail.com" target="_blank"
               rel="noopener" data-testid="contact-email">
               <span class="icon brand"><img src="https://api.iconify.design/logos:google-gmail.svg" alt="Gmail"></span>
@@ -835,7 +984,7 @@
               <span class="arrow"><i class="bi bi-arrow-left"></i></span>
             </a>
           </li>
-          <li>
+          <li class="reveal" data-delay="4">
             <a href="https://earth.google.com/web/@-6.34406327,106.7361878,64.02222202a,532.27611883d,35y,221.45540249h,60t,0r/data=KAI"
               target="_blank" rel="noopener" data-testid="contact-location">
               <span class="icon brand"><img src="https://api.iconify.design/logos:google-maps.svg"

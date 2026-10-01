@@ -180,21 +180,23 @@
     backToTopBtn = btn;
   }
 
-  /* ---------- Reveal on scroll ---------- */
-  const reveals = document.querySelectorAll(".reveal, .skill-card, .project-card");
+  /* ---------- Reveal on scroll (Bidirectional: appears when scrolling down, disappears when scrolling up) ---------- */
+  const revealSelector = ".reveal, .stat-card, .skill-card, .project-card, .cert-card, .timeline-item";
+  const reveals = document.querySelectorAll(revealSelector);
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("in-view");
-        io.unobserve(entry.target);
+      } else {
+        entry.target.classList.remove("in-view");
       }
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+  }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
   reveals.forEach((el) => io.observe(el));
 
   /* ---------- Typed.js init (Saved to window for i18n switcher) ---------- */
   const typedEl = document.querySelector(".typed");
-  if (typedEl && typeof Typed !== "undefined") {
+  if (typedEl && typeof Typed !== "undefined" && !window.typedInstance) {
     let items = typedEl.getAttribute("data-typed-items");
     items = items ? items.split(",").map((s) => s.trim()) : [];
     window.typedInstance = new Typed(".typed", {
@@ -205,6 +207,15 @@
       backDelay: 1800,
     });
   }
+
+  /* ---------- Safe handling for placeholder project links ---------- */
+  document.querySelectorAll('.project-link[href="#"]').forEach((link) => {
+    link.removeAttribute("target");
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+    });
+    link.style.cursor = "default";
+  });
 
   /* ---------- AOS init ---------- */
   if (typeof AOS !== "undefined") {
@@ -217,10 +228,56 @@
     });
   }
 
-  /* ---------- 3D Tilt on cards (desktop, rAF optimized) ---------- */
+  /* ---------- Interactive Spotlight & 3D Tilt for Cards ---------- */
+  (function cardSpotlights() {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const interactiveCards = document.querySelectorAll(".project-card, .skill-card, .stat-card");
+
+    interactiveCards.forEach((card) => {
+      let rect = null;
+      let rafId = null;
+
+      card.addEventListener("mouseenter", () => {
+        rect = card.getBoundingClientRect();
+        card.style.setProperty("--spotlight-opacity", "1");
+        card.style.setProperty("--lift-y", "-5px");
+      }, { passive: true });
+
+      card.addEventListener("mousemove", (e) => {
+        if (!rect) rect = card.getBoundingClientRect();
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          const clientX = e.clientX - rect.left;
+          const clientY = e.clientY - rect.top;
+
+          card.style.setProperty("--mouse-x", `${clientX.toFixed(1)}px`);
+          card.style.setProperty("--mouse-y", `${clientY.toFixed(1)}px`);
+
+          const nx = clientX / rect.width - 0.5;
+          const ny = clientY / rect.height - 0.5;
+          const rx = (-ny * 6).toFixed(2);
+          const ry = (nx * 6).toFixed(2);
+
+          card.style.setProperty("--tilt-x", `${rx}deg`);
+          card.style.setProperty("--tilt-y", `${ry}deg`);
+        });
+      }, { passive: true });
+
+      card.addEventListener("mouseleave", () => {
+        if (rafId) cancelAnimationFrame(rafId);
+        rect = null;
+        card.style.setProperty("--spotlight-opacity", "0");
+        card.style.setProperty("--lift-y", "0px");
+        card.style.setProperty("--tilt-x", "0deg");
+        card.style.setProperty("--tilt-y", "0deg");
+      }, { passive: true });
+    });
+  })();
+
+  /* ---------- 3D Tilt on other cards (desktop, rAF optimized) ---------- */
   (function tilt() {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-    const cards = document.querySelectorAll(".project-card, .cert-card, .skill-card, .timeline-card");
+    const cards = document.querySelectorAll(".cert-card, .timeline-card");
     cards.forEach((card) => {
       let rect = null;
       let rafId = null;
@@ -279,28 +336,61 @@
     });
   })();
 
-  /* ---------- Number counter animation ---------- */
+  /* ---------- Number counter animation (Bidirectional: counts up on enter, resets on exit) ---------- */
   (function counters() {
     const els = document.querySelectorAll("[data-counter]");
     if (!els.length) return;
+
+    const running = new Map();
+
+    // Set initial text to 0
+    els.forEach((el) => {
+      const decimals = (el.getAttribute("data-decimals") || 0) | 0;
+      el.textContent = (0).toFixed(decimals);
+    });
+
     const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        const el = e.target;
+      entries.forEach((entry) => {
+        const el = entry.target;
         const target = parseFloat(el.getAttribute("data-counter"));
         const decimals = (el.getAttribute("data-decimals") || 0) | 0;
-        const dur = 1400;
-        const start = performance.now();
-        function step(now) {
-          const p = Math.min((now - start) / dur, 1);
-          const eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = (target * eased).toFixed(decimals);
-          if (p < 1) requestAnimationFrame(step);
+
+        if (entry.isIntersecting) {
+          // Cancel any existing animation on this element
+          if (running.has(el)) {
+            cancelAnimationFrame(running.get(el));
+          }
+
+          const dur = 1250;
+          const start = performance.now();
+
+          function step(now) {
+            const p = Math.min((now - start) / dur, 1);
+            // Smooth easeOutCubic
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = (target * eased).toFixed(decimals);
+            if (p < 1) {
+              const id = requestAnimationFrame(step);
+              running.set(el, id);
+            } else {
+              el.textContent = target.toFixed(decimals);
+              running.delete(el);
+            }
+          }
+
+          const id = requestAnimationFrame(step);
+          running.set(el, id);
+        } else {
+          // Scrolled out of view: cancel animation and reset to 0
+          if (running.has(el)) {
+            cancelAnimationFrame(running.get(el));
+            running.delete(el);
+          }
+          el.textContent = (0).toFixed(decimals);
         }
-        requestAnimationFrame(step);
-        obs.unobserve(el);
       });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.15, rootMargin: "0px 0px -20px 0px" });
+
     els.forEach((el) => obs.observe(el));
   })();
 
