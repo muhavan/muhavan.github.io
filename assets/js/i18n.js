@@ -352,7 +352,7 @@
       if (window.typedInstance) {
         try {
           window.typedInstance.destroy();
-        } catch (e) {}
+        } catch (e) { }
         window.typedInstance = null;
       }
 

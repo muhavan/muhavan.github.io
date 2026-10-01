@@ -180,7 +180,7 @@
     backToTopBtn = btn;
   }
 
-  /* ---------- Reveal on scroll (Bidirectional: appears when scrolling down, disappears when scrolling up) ---------- */
+  /* ---------- Reveal on scroll (Appears on scroll down; stays visible above; only disappears when scrolled up past below) ---------- */
   const revealSelector = ".reveal, .stat-card, .skill-card, .project-card, .cert-card, .timeline-item";
   const reveals = document.querySelectorAll(revealSelector);
   const io = new IntersectionObserver((entries) => {
@@ -188,7 +188,11 @@
       if (entry.isIntersecting) {
         entry.target.classList.add("in-view");
       } else {
-        entry.target.classList.remove("in-view");
+        // When scrolling down, elements above the screen must NOT disappear
+        // Only remove in-view when element is below the viewport (user scrolled up past it)
+        if (entry.boundingClientRect.top > 0) {
+          entry.target.classList.remove("in-view");
+        }
       }
     });
   }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
@@ -381,12 +385,15 @@
           const id = requestAnimationFrame(step);
           running.set(el, id);
         } else {
-          // Scrolled out of view: cancel animation and reset to 0
-          if (running.has(el)) {
-            cancelAnimationFrame(running.get(el));
-            running.delete(el);
+          // Only reset when element moves below the viewport (user scrolled up past it)
+          // Keep count intact if element is above the viewport (user scrolled down past it)
+          if (entry.boundingClientRect.top > 0) {
+            if (running.has(el)) {
+              cancelAnimationFrame(running.get(el));
+              running.delete(el);
+            }
+            el.textContent = (0).toFixed(decimals);
           }
-          el.textContent = (0).toFixed(decimals);
         }
       });
     }, { threshold: 0.15, rootMargin: "0px 0px -20px 0px" });
