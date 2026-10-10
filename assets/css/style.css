@@ -2284,6 +2284,7 @@ section {
 .project-card[data-delay="2"] { --reveal-delay: 0.22s; transition-delay: 0.22s; }
 .project-card[data-delay="3"] { --reveal-delay: 0.32s; transition-delay: 0.32s; }
 .project-card[data-delay="4"] { --reveal-delay: 0.42s; transition-delay: 0.42s; }
+.project-card[data-delay="5"] { --reveal-delay: 0.52s; transition-delay: 0.52s; }
 
 /* When scrolled into view: smoothly snaps into place with 3D tilt responsiveness */
 .project-card.in-view {
@@ -3139,6 +3140,7 @@ section {
 .reveal[data-delay="2"] { transition-delay: 0.2s; }
 .reveal[data-delay="3"] { transition-delay: 0.3s; }
 .reveal[data-delay="4"] { transition-delay: 0.4s; }
+.reveal[data-delay="5"] { transition-delay: 0.5s; }
 
 /* Skill cards 3D tilt reveal */
 .skill-card.reveal {
