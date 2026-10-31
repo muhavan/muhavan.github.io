@@ -5,69 +5,31 @@
 (function () {
   "use strict";
 
-  /* ---------- Preloader ---------- */
-  window.addEventListener("load", function () {
+  /* ---------- Preloader (Fast, non-blocking with hard fallback) ---------- */
+  (function initPreloader() {
     const pre = document.getElementById("preloader");
     if (!pre) return;
-    setTimeout(() => pre.classList.add("done"), 500);
-    setTimeout(() => pre.remove(), 1200);
-  });
 
-  /* ---------- Custom Cursor (Silky smooth, no CSS conflict) ---------- */
-  (function cursor() {
-    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-    const dot = document.querySelector(".cursor-dot");
-    const ring = document.querySelector(".cursor-ring");
-    if (!dot || !ring) return;
-
-    let mx = -100, my = -100;
-    let rx = -100, ry = -100;
-    let isInitialized = false;
-
-    window.addEventListener("mousemove", (e) => {
-      mx = e.clientX;
-      my = e.clientY;
-
-      if (!isInitialized) {
-        rx = mx;
-        ry = my;
-        isInitialized = true;
-        dot.style.opacity = "1";
-        ring.style.opacity = "1";
-      }
-    }, { passive: true });
-
-    document.addEventListener("mouseleave", () => {
-      dot.style.opacity = "0";
-      ring.style.opacity = "0";
-    });
-
-    document.addEventListener("mouseenter", () => {
-      if (isInitialized) {
-        dot.style.opacity = "1";
-        ring.style.opacity = "1";
-      }
-    });
-
-    function loop() {
-      if (isInitialized) {
-        // Fast responsive lerp
-        rx += (mx - rx) * 0.28;
-        ry += (my - ry) * 0.28;
-
-        // Hardware-accelerated subpixel translate3d
-        dot.style.transform = `translate3d(${mx}px, ${my}px, 0) translate3d(-50%, -50%, 0)`;
-        ring.style.transform = `translate3d(${rx.toFixed(2)}px, ${ry.toFixed(2)}px, 0) translate3d(-50%, -50%, 0)`;
-      }
-      requestAnimationFrame(loop);
+    let dismissed = false;
+    function dismissPreloader() {
+      if (dismissed) return;
+      dismissed = true;
+      pre.classList.add("done");
+      setTimeout(() => {
+        if (pre.parentNode) pre.remove();
+      }, 500);
     }
-    requestAnimationFrame(loop);
 
-    const interactive = "a, button, .skill-card, .cert-card, .about-image, .contact-cta, .project-card, .timeline-card, .lang-btn";
-    document.querySelectorAll(interactive).forEach((el) => {
-      el.addEventListener("mouseenter", () => ring.classList.add("is-hover"), { passive: true });
-      el.addEventListener("mouseleave", () => ring.classList.remove("is-hover"), { passive: true });
-    });
+    // Dismiss secepatnya setelah DOM siap (tanpa menunggu file gambar besar selesai download)
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+      setTimeout(dismissPreloader, 300);
+    } else {
+      document.addEventListener("DOMContentLoaded", () => setTimeout(dismissPreloader, 300));
+    }
+
+    // Safety timeout: di jaringan lambat pun preloader TIDAK AKAN PERNAH menahan user lebih dari 700ms
+    setTimeout(dismissPreloader, 700);
+    window.addEventListener("load", dismissPreloader);
   })();
 
   /* ---------- Mobile nav toggle ---------- */
