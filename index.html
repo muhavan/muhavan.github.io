@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Muhavan Official</title>
   <meta name="description" content="Web Developer | IT Support | Network Engineer">
+  <meta name="theme-color" content="#05080f">
   <link rel="canonical" href="https://muhavan.my.id/">
 
   <!-- Open Graph -->
@@ -39,8 +40,19 @@
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
+  <!-- Apply saved theme before first paint to prevent flash -->
+  <script>
+    try {
+      if (localStorage.getItem("muhavan_theme") === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+        var tc = document.querySelector('meta[name="theme-color"]');
+        if (tc) tc.setAttribute("content", "#dce3ed");
+      }
+    } catch (e) {}
+  </script>
+
   <!-- Custom CSS -->
-  <link href="assets/css/style.css?v=2" rel="stylesheet">
+  <link href="assets/css/style.css?v=6" rel="stylesheet">
 </head>
 
 <body data-testid="portfolio-body">
@@ -101,6 +113,12 @@
           <span class="lang-divider">/</span>
           <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
         </div>
+
+        <!-- Theme Toggle Button -->
+        <button type="button" class="theme-toggle" id="theme-toggle" data-testid="theme-toggle"
+          aria-label="Ganti Tema / Switch Theme" title="Ganti Tema / Switch Theme" aria-pressed="false">
+          <i class="bx bx-sun" aria-hidden="true"></i>
+        </button>
 
         <a href="https://drive.google.com/file/d/1A_cFq8-yaJWBIUE_RnUtsOM3ZZ0tnS8P/view?usp=sharing" target="_blank"
           rel="noopener" class="header-cta scrollto" data-testid="header-cta">
@@ -804,12 +822,18 @@
         <div class="github-stats-grid">
           <img class="github-card"
             src="https://github-stats-extended.vercel.app/api?username=muhavan&show_icons=true&hide_border=true&bg_color=0a0f1a&title_color=6c8bc4&text_color=e6ebf5&icon_color=4a6fa8&include_all_commits=true&count_private=true&cache_seconds=86400"
+            data-dark-src="https://github-stats-extended.vercel.app/api?username=muhavan&show_icons=true&hide_border=true&bg_color=0a0f1a&title_color=6c8bc4&text_color=e6ebf5&icon_color=4a6fa8&include_all_commits=true&count_private=true&cache_seconds=86400"
+            data-light-src="https://github-stats-extended.vercel.app/api?username=muhavan&show_icons=true&hide_border=true&bg_color=e6ecf4&title_color=2c4e86&text_color=141e30&icon_color=2c4e86&include_all_commits=true&count_private=true&cache_seconds=86400"
             alt="GitHub Stats" loading="lazy" decoding="async">
           <img class="github-card"
             src="https://github-stats-extended.vercel.app/api/top-langs/?username=muhavan&layout=compact&hide_border=true&bg_color=0a0f1a&title_color=6c8bc4&text_color=e6ebf5&langs_count=8&cache_seconds=86400"
+            data-dark-src="https://github-stats-extended.vercel.app/api/top-langs/?username=muhavan&layout=compact&hide_border=true&bg_color=0a0f1a&title_color=6c8bc4&text_color=e6ebf5&langs_count=8&cache_seconds=86400"
+            data-light-src="https://github-stats-extended.vercel.app/api/top-langs/?username=muhavan&layout=compact&hide_border=true&bg_color=e6ecf4&title_color=2c4e86&text_color=141e30&langs_count=8&cache_seconds=86400"
             alt="Top Languages" loading="lazy" decoding="async">
           <img class="github-card github-card--wide"
             src="https://streak-stats.demolab.com/?user=muhavan&hide_border=true&background=0a0f1a&stroke=1f2a3d&ring=4a6fa8&fire=6c8bc4&currStreakLabel=6c8bc4&sideLabels=9aa3b5&dates=9aa3b5&currStreakNum=e6ebf5&sideNums=e6ebf5&cache_seconds=86400"
+            data-dark-src="https://streak-stats.demolab.com/?user=muhavan&hide_border=true&background=0a0f1a&stroke=1f2a3d&ring=4a6fa8&fire=6c8bc4&currStreakLabel=6c8bc4&sideLabels=9aa3b5&dates=9aa3b5&currStreakNum=e6ebf5&sideNums=e6ebf5&cache_seconds=86400"
+            data-light-src="https://streak-stats.demolab.com/?user=muhavan&hide_border=true&background=e6ecf4&stroke=cbd5e1&ring=2c4e86&fire=3b63a6&currStreakLabel=2c4e86&sideLabels=3b4a62&dates=3b4a62&currStreakNum=141e30&sideNums=141e30&cache_seconds=86400"
             alt="GitHub Streak" loading="lazy" decoding="async">
         </div>
       </div>
@@ -1046,7 +1070,7 @@
   <script src="assets/js/i18n.js?v=2"></script>
 
   <!-- Custom main JS -->
-  <script src="assets/js/portfolio.js?v=2"></script>
+  <script src="assets/js/portfolio.js?v=6"></script>
 </body>
 
 </html>

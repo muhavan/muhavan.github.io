@@ -5,6 +5,127 @@
 (function () {
   "use strict";
 
+  /* ---------- Theme Switcher (Dark Default + Animated Circular Reveal) ---------- */
+  (function initTheme() {
+    const toggleBtn = document.getElementById("theme-toggle");
+    const root = document.documentElement;
+    let animTimer = null;
+
+    function applyTheme(theme) {
+      const isLight = theme === "light";
+      if (isLight) {
+        root.setAttribute("data-theme", "light");
+      } else {
+        root.removeAttribute("data-theme");
+      }
+
+      const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+      if (themeColorMeta) {
+        themeColorMeta.setAttribute("content", isLight ? "#dce3ed" : "#05080f");
+      }
+
+      if (toggleBtn) {
+        const icon = toggleBtn.querySelector("i");
+        if (icon) {
+          icon.className = isLight ? "bx bx-moon" : "bx bx-sun";
+        }
+        toggleBtn.setAttribute("aria-pressed", isLight ? "true" : "false");
+        toggleBtn.setAttribute("title", isLight ? "Mode Gelap / Dark Mode" : "Mode Terang / Light Mode");
+      }
+
+      document.querySelectorAll(".github-card[data-light-src]").forEach((img) => {
+        const nextSrc = isLight ? img.getAttribute("data-light-src") : img.getAttribute("data-dark-src");
+        if (nextSrc && img.getAttribute("src") !== nextSrc) {
+          img.setAttribute("src", nextSrc);
+        }
+      });
+
+      try {
+        localStorage.setItem("muhavan_theme", isLight ? "light" : "dark");
+      } catch (e) {}
+    }
+
+    function triggerButtonAnimation() {
+      if (!toggleBtn) return;
+      toggleBtn.classList.remove("is-animating");
+      void toggleBtn.offsetWidth;
+      toggleBtn.classList.add("is-animating");
+      if (animTimer) clearTimeout(animTimer);
+      animTimer = setTimeout(() => {
+        toggleBtn.classList.remove("is-animating");
+      }, 650);
+    }
+
+    function switchThemeWithAnimation(nextTheme) {
+      const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      triggerButtonAnimation();
+
+      if (reduceMotion) {
+        applyTheme(nextTheme);
+        return;
+      }
+
+      // Compute origin from theme toggle button center
+      let x = window.innerWidth - 60;
+      let y = 32;
+      if (toggleBtn) {
+        const rect = toggleBtn.getBoundingClientRect();
+        x = rect.left + rect.width / 2;
+        y = rect.top + rect.height / 2;
+      }
+      const endRadius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+      );
+
+      // Primary: circular clip-path reveal via View Transitions API
+      if (typeof document.startViewTransition === "function") {
+        const transition = document.startViewTransition(() => {
+          applyTheme(nextTheme);
+        });
+        transition.ready.then(() => {
+          document.documentElement.animate(
+            {
+              clipPath: [
+                `circle(0px at ${x}px ${y}px)`,
+                `circle(${endRadius}px at ${x}px ${y}px)`,
+              ],
+            },
+            {
+              duration: 600,
+              easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+              pseudoElement: "::view-transition-new(root)",
+            }
+          );
+        }).catch(() => {});
+        return;
+      }
+
+      // Fallback for older browsers without View Transitions API
+      root.classList.add("theme-transitioning");
+      applyTheme(nextTheme);
+      setTimeout(() => {
+        root.classList.remove("theme-transitioning");
+      }, 550);
+    }
+
+    let initialTheme = "dark";
+    try {
+      if (localStorage.getItem("muhavan_theme") === "light") {
+        initialTheme = "light";
+      }
+    } catch (e) {}
+
+    applyTheme(initialTheme);
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme") === "light" ? "light" : "dark";
+        switchThemeWithAnimation(current === "light" ? "dark" : "light");
+      });
+    }
+  })();
+
   /* ---------- Preloader (Fast, non-blocking with hard fallback) ---------- */
   (function initPreloader() {
     const pre = document.getElementById("preloader");
