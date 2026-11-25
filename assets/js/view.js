@@ -25,7 +25,7 @@
         alert('Certificate link will be added soon.');
         return;
       }
-      window.open(urls[certId], '_blank');
+      window.open(urls[certId], '_blank', 'noopener,noreferrer');
     } else {
       console.error('Certificate ID not found:', certId);
       alert('Certificate not found. Please contact support for assistance.');

@@ -24,7 +24,7 @@
         certificate: "Sertifikat",
         contact: "Kontak",
         cv: "CV",
-        download_cv: "Unduh CV",
+        download_cv: "Lihat CV",
       },
       hero: {
         eyebrow: "Tersedia untuk bekerja · Bogor, Indonesia",
@@ -41,7 +41,7 @@
         subtitle: "Lulusan Teknologi Informasi yang antusias dengan pengembangan web, jaringan & IT support — membangun sistem yang bermanfaat dan siap berkontribusi secara profesional.",
         headline_pre: "Lulusan Teknologi Informasi berfokus pada ",
         headline_accent: "web programming",
-        desc: "Lulusan S1 Teknologi Informasi dari <strong>Universitas Bina Sarana Informatika</strong> (IPK <strong>3.75</strong>, lulus september 2026). Memiliki minat besar dalam pengembangan web &mdash; membangun aplikasi dengan Laravel, Node.js, dan teknologi web modern. Saya juga memiliki pengalaman langsung di bidang IT Support, Network Engineering, dan Cyber Security, dengan keahlian di Python, PHP, dan Mikrotik. Siap berkontribusi secara positif di lingkungan teknologi yang dinamis.",
+        desc: "Lulusan S1 Teknologi Informasi dari <strong>Universitas Bina Sarana Informatika</strong> (IPK <strong>3.75</strong>, lulus Agustus 2026). Memiliki minat besar dalam pengembangan web &mdash; membangun aplikasi dengan Laravel, Node.js, dan teknologi web modern. Saya juga memiliki pengalaman langsung di bidang IT Support, Network Engineering, dan Cyber Security, dengan keahlian di Python, PHP, dan Mikrotik. Siap berkontribusi secara positif di lingkungan teknologi yang dinamis.",
         info_name: "Nama",
         info_city: "Kota",
         info_city_val: "Bogor, Indonesia",
@@ -170,7 +170,7 @@
         certificate: "Certificate",
         contact: "Contact",
         cv: "CV",
-        download_cv: "Download CV",
+        download_cv: "View CV",
       },
       hero: {
         eyebrow: "Available for work · Bogor, Indonesia",
